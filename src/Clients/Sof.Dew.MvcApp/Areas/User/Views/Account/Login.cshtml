@@ -1,0 +1,48 @@
+﻿@model Sof.Dew.MvcApp.Areas.User.Models.LoginViewModel
+@{
+    ViewBag.Title = "登录";
+    Layout = "~/Areas/User/Views/Shared/_AccountLayout.cshtml";
+}
+@section head{
+    <style>
+        .body-content {
+            max-width: 360px;
+        }
+    </style>
+}
+@using (Html.BeginForm("Login", "Account",
+                new { ReturnUrl = ViewBag.ReturnUrl },
+                FormMethod.Post,
+                new { role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid">
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control bo", placeholder = "手机号/用户名" })
+        </div>
+        <div class="form-group">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "登录密码" })
+        </div>
+        @Html.ValidationSummary("", new { @class = "text-danger text-left" })
+        <div class="checkbox text-left">
+            <label>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.DisplayNameFor(m => m.RememberMe)
+            </label>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><span class="glyphicon glyphicon-ok"></span> 登录</button>
+        </div>
+    </div>
+}
+
+@section panel_footer{
+    <footer style="position:absolute; bottom:0px; line-height:50px; width:100%; text-align:center;">
+        @Html.ActionLink("注册账号", "Register", null, new { @style = "padding-right:50px;" })
+        @Html.ActionLink("忘记密码", "ForgotPassword", null, new { @style = "padding-left:50px;" })
+    </footer>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

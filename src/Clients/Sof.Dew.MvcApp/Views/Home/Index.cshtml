@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Dew";
+}
+@section head{
+    <link href="~/Content/homeindex.css" rel="stylesheet" />
+}
+<div id="article">
+    <div class="page section1 current">
+        <div class="contain">
+            <h3 class="title">这里是第一竖屏</h3>
+            <h4 class="titleEng">This is section1</h4>
+        </div>
+    </div>
+    <div class="page section2">
+        <div class="contain">
+            <div id="pageContain">
+                <div class="page page1 current">
+                    <div class="contain">
+                        <h3 class="title">XXX手机APP</h3>
+                        <h4 class="titleEng">问道</h4>
+                        <img src="images/a2.png" alt="" class="page1-box">
+                        <p>寻医问诊</p>
+                    </div>
+                </div>
+                <div class="page page2">
+                    <div class="contain">
+                        <h3 class="title">悟道</h3>
+                        <h4 class="titleEng">我的病例</h4>
+                        <img src="images/a10.png" alt="走过的路" class="page2-box">
+                    </div>
+                </div>
+                <div class="page page3">
+                    <div class="contain">
+                        <h3 class="title">知道</h3>
+                        <h4 class="titleEng">未卜先知-推算</h4>
+                        <img src="images/a13.png" alt="" class="page3-box">
+                    </div>
+                    <div class="scTop"></div>
+                    <div class="scBottom"></div>
+                </div>
+                <div class="page page4">
+                    <div class="contain">
+                        <h3 class="title">同道</h3>
+                        <h4 class="titleEng">我的圈子</h4>
+                        <div class="page4-box">
+                            <img src="images/a5.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul id="navBar">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="page section3">
+        <div class="contain">
+            <h3 class="title">这里是第三竖屏</h3>
+            <h4 class="titleEng">This is section3</h4>
+        </div>
+    </div>
+    <div class="page section4">
+        <div class="contain">
+            <h3 class="title">这里是第四竖屏</h3>
+            <h4 class="titleEng">This is section4</h4>
+        </div>
+    </div>
+</div>
+
+<div class="btns">
+    @Html.ActionLink(" 注册账号 ", "Register", "Account", new { area = "User" }, new { @class = "btn btn-success register" })
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink(" 　登录　 ", "Login", "Account", new { area = "User" }, new { @class = "btn btn-default login" })
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/fullpage")
+    <script>
+        var runPage = new FullPage({
+            id: 'pageContain',
+            slideTime: 800,
+            effect: {
+                transform: { translate: 'X', scale: [0, 1], rotate: [0, 0] },
+                opacity: [0, 1]
+            },
+            mode: 'touch,nav:navBar',
+            easing: [0, .93, .39, .98],
+            callback: function (index, thisPage) { }
+        });
+
+        var runSection = new FullPage({
+            id: 'article',
+            slideTime: 1000,
+            effect: {
+                transform: { translate: 'Y', scale: [1, 1], rotate: [0, 0] },
+                opacity: [0, 1]
+            },
+            mode: 'touch,wheel',
+            easing: [0, .93, .39, .98],
+            callback: function (index, thisPage) { }
+        });
+    </script>
+}

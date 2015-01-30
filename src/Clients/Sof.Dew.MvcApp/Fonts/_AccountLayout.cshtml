@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    @RenderSection("head", required: false)
+}
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="javascript:history.go(-1);">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <span class="navbar-brand"> <strong>@ViewBag.Title</strong></span>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid body-content">
+    @RenderBody()
+</div>
+<footer>
+    @RenderSection("panel_footer", required: false)
+</footer>
+@section scripts{
+    @RenderSection("scripts", required: false)
+}

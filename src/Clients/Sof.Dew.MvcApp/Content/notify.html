@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>web Notification</title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <button id="notifSettings">设置是否启用桌面通知</button>
+    <button id="checkBrowser">检查浏览器是否支持桌面通知</button>
+    <button id="checkNotifSettings">检查浏览器是否已启用桌面通知</button>
+    <button id="sendOrdinaryNotification">发送一个普通的桌面通知，并在10s后自动清除 </button>
+    <button id="notificationTag">发送一个带有标签通知 </button>
+    <button id="notificationEvent">通知的事件</button>
+    <button id="sendHtmlNotification">发送一个html通知 </button>
+    <!--W3C的接口标准:   http://www.w3.org/TR/notifications/#icon-url-->
+    <!--google chrome的接口标准:  http://www.chromium.org/developers/design-documents/desktop-notifications/api-specification-->
+    <script>
+        $("#notifSettings").click(function () {
+            if (window.webkitNotifications) {
+                window.webkitNotifications.requestPermission();
+            } else { alert("该浏览器不支持桌面通知"); }
+        });
+        $("#checkBrowser").click(function () {
+            var hasNotificationsPermissions = function () {
+                // Check if the browser supports notifications
+                if (window.webkitNotifications) {
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+            if (hasNotificationsPermissions()) {
+                alert("该浏览器支持桌面通知");
+            } else {
+                alert("该浏览器不支持桌面通知");
+            }
+        });
+        $("#checkNotifSettings").click(function () {
+
+            switch (webkitNotifications.checkPermission()) {
+                case 0: // PERMISSION_ALLOWED
+                    alert("用户已启用桌面通知");
+                    break;
+                case 1: // PERMISSION_NOT_ALLOWED
+                    alert("未启用桌面通知");
+                    break;
+                case 2: // PERMISSION_DENIED
+                    alert("用户已阻止启用桌面通知");
+                    break;
+            }
+        });
+        $("#sendOrdinaryNotification").click(function () {
+            if (webkitNotifications.checkPermission() == 0) {
+                var iconImageUrl = "http://portrait6.sinaimg.cn/2881133597/blog/180";
+                var title = "Hello";
+                var subTitle = "This is a sample desktop notification.";
+
+                var notification = webkitNotifications.createNotification(iconImageUrl, title, subTitle);
+                notification.show();
+                setTimeout(function () { notification.cancel(); }, 10000);
+            } else {
+                alert("Please request permissions first.");
+            }
+        });
+        $("#sendHtmlNotification").click(function () {
+            if (webkitNotifications.checkPermission() == 0) {
+                var url = "http://www.example.com/notification.html";
+                var notification = webkitNotifications.createHTMLNotification(url);
+                notification.show();
+            } else {
+                alert("Please request permissions first.");
+            }
+        });
+        $('#notificationTag').click(function () {
+            //不建议使用该方式，chrome对改方式的onerror事件支持不好
+            var notification1 = new Notification("这是一个标签为message1的通知:来自应用一", { tag: 'message1' });
+            var notification2 = new Notification("这是一个标签为message1的通知:来自应用二", { tag: 'message1' });
+            notification1.show();
+            setTimeout(function () { notification2.show(); }, 5000)
+        });
+        $('#notificationEvent').click(function () {
+            var iconImageUrl = "http://portrait6.sinaimg.cn/2881133597/blog/180";
+            var title = "Hello";
+            var subTitle = "This is a sample desktop notification.";
+            var notification = webkitNotifications.createNotification(iconImageUrl, title, subTitle);
+            notification.ondisplay = function () { console.log('已发送通知！') };
+            notification.onerror = function () { alert('发送通知过程中发生错误！') };
+            notification.onclose = function () { console.log('通知已关闭！') };
+            notification.onclick = function () {
+                console.log('用户已点击通知！');
+                //            window.location.href='http://blog.sina.com.cn/u/2881133597';
+                window.blur(); setTimeout(window.focus(), 0);
+            };
+            notification.show();
+            setTimeout(function () {
+                notification.close();//关闭通知
+                notification.cancel();//删除这个通知对象
+            }, 10000)
+        })
+    </script>
+</body>
+</html>
