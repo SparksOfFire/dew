@@ -12,12 +12,17 @@ namespace Sof.Dew.MvcApp.Controllers
         {
             return View();
         }
-  
+
         public ActionResult Main()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View("User/Account/Login");
         }
     }
 }

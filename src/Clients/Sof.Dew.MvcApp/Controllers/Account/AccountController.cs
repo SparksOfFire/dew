@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.AspNet.Identity;
 
-namespace Sof.Dew.MvcApp.Areas.User.Controllers
+namespace Sof.Dew.MvcApp.Controllers
 {
     [Authorize]
     public partial class AccountController : Controller

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Sof.Dew.MvcApp.Areas.User.Controllers
+namespace Sof.Dew.MvcApp.Controllers
 {
     public partial class AccountController
     {

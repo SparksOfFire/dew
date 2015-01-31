@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Soft.Dew.MvcApp</RootNamespace>
-    <AssemblyName>Soft.Dew.MvcApp</AssemblyName>
+    <RootNamespace>Sof.Dew.MvcApp</RootNamespace>
+    <AssemblyName>Sof.Dew.MvcApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -156,15 +156,20 @@
   <ItemGroup>
     <Compile Include="App_Start\AppConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MefConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\User\Controllers\Account\AccountController.cs" />
-    <Compile Include="Areas\User\Controllers\Account\AccountController.login.cs" />
-    <Compile Include="Areas\User\Controllers\Account\AccountController.password.cs" />
-    <Compile Include="Areas\User\Controllers\Account\AccountController.register.cs" />
-    <Compile Include="Areas\User\Controllers\Account\AccountController.verify.cs" />
+    <Compile Include="App_Start\ViewEngineConfig.cs" />
+    <Compile Include="Areas\Consult\ConsultAreaRegistration.cs" />
+    <Compile Include="Areas\Consult\Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Account\AccountController.login.cs" />
+    <Compile Include="Controllers\Account\AccountController.password.cs" />
+    <Compile Include="Controllers\Account\AccountController.register.cs" />
+    <Compile Include="Controllers\Account\AccountController.verify.cs" />
     <Compile Include="Areas\User\Controllers\Manage\ManageController.cs" />
-    <Compile Include="Areas\User\Models\AccountViewModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Areas\User\Models\ManageViewModels.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -194,28 +199,30 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Manage\Index.cshtml" />
-    <Content Include="Areas\User\Views\Account\Login.cshtml" />
-    <Content Include="Areas\User\Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Areas\User\Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Areas\User\Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Areas\User\Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Areas\User\Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Areas\User\Views\Account\Register.cshtml" />
-    <Content Include="Areas\User\Views\Account\ResetPassword.cshtml" />
-    <Content Include="Areas\User\Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Areas\User\Views\Account\SendCode.cshtml" />
-    <Content Include="Areas\User\Views\Account\VerifyCode.cshtml" />
-    <Content Include="Areas\User\Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Areas\User\Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Areas\User\Views\Account\_RemoveAccountPartial.cshtml" />
-    <Content Include="Areas\User\Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Areas\User\Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Areas\User\Views\Manage\ChangePassword.cshtml" />
     <Content Include="Areas\User\Views\Manage\ManageLogins.cshtml" />
     <Content Include="Areas\User\Views\Manage\SetPassword.cshtml" />
     <Content Include="Areas\User\Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_AccountLayout.cshtml" />
+    <Content Include="Views\Shared\_AccountLayout.cshtml" />
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Consult\Views\web.config" />
+    <Content Include="Areas\Consult\Views\Default\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
     <Content Include="Scripts\fullPage.js" />
@@ -262,6 +269,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Consult\Models\" />
+    <Folder Include="Areas\Consult\Views\Shared\" />
+    <Folder Include="Areas\User\Views\Shared\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />

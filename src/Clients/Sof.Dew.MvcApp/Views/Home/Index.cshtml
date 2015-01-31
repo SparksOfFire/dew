@@ -71,9 +71,9 @@
 </div>
 
 <div class="btns">
-    @Html.ActionLink(" 注册账号 ", "Register", "Account", new { area = "User" }, new { @class = "btn btn-success register" })
+    @Html.ActionLink(" 注册账号 ", "Register", "Account", null, new { @class = "btn btn-success register" })
     &nbsp;&nbsp;&nbsp;&nbsp;
-    @Html.ActionLink(" 　登录　 ", "Login", "Account", new { area = "User" }, new { @class = "btn btn-default login" })
+    @Html.ActionLink(" 　登录　 ", "Login", "Account", null, new { @class = "btn btn-default login" })
 </div>
 @section scripts{
     @Scripts.Render("~/bundles/fullpage")

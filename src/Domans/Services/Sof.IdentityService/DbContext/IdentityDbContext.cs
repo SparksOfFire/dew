@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,10 @@ namespace Sof.IdentityService
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Models.User>().ToTable("Sys_Users");
-            modelBuilder.Entity<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>().ToTable("Sys_Roles");
-            modelBuilder.Entity<Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole>().ToTable("Sys_UserRoles");
-            modelBuilder.Entity<Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin>().ToTable("Sys_UserLogins");
-            modelBuilder.Entity<Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim>().ToTable("Sys_UserClaims");
+            modelBuilder.Entity<IdentityRole>().ToTable("Sys_Roles");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("Sys_UserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("Sys_UserLogins");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("Sys_UserClaims");
         }
         public static IdentityDbContext Create()
         {

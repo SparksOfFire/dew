@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sof.Dew.MvcApp.Areas.User.Models
+namespace Sof.Dew.MvcApp.Models
 {
     public class LoginViewModel
     {
