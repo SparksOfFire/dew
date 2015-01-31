@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sof.MessageService", "Doman
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sof.SmsService", "Domans\Services\Sof.SmsService\Sof.SmsService.csproj", "{DCC4B844-7AAF-4BCA-AFC8-FFE5E066B3A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sof.Core.Test", "Tests\Sof.Core.Test\Sof.Core.Test.csproj", "{A284EE4C-111F-4794-84A6-B4EE219B38F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{DCC4B844-7AAF-4BCA-AFC8-FFE5E066B3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCC4B844-7AAF-4BCA-AFC8-FFE5E066B3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCC4B844-7AAF-4BCA-AFC8-FFE5E066B3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A284EE4C-111F-4794-84A6-B4EE219B38F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A284EE4C-111F-4794-84A6-B4EE219B38F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A284EE4C-111F-4794-84A6-B4EE219B38F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A284EE4C-111F-4794-84A6-B4EE219B38F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,5 +83,6 @@ Global
 		{C44670CE-0D9E-4D5F-825F-2CB244E865E8} = {9D2D00AF-F05C-4863-840C-0C970F55261F}
 		{103C1556-D1CC-40FC-ADD0-4937CF9DC1A6} = {9D2D00AF-F05C-4863-840C-0C970F55261F}
 		{DCC4B844-7AAF-4BCA-AFC8-FFE5E066B3A5} = {9D2D00AF-F05C-4863-840C-0C970F55261F}
+		{A284EE4C-111F-4794-84A6-B4EE219B38F3} = {42949E1B-07D0-4B82-AFD8-7B41049E6FCD}
 	EndGlobalSection
 EndGlobal
