@@ -85,7 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DatabaseInitializer.cs" />
+    <Compile Include="Data\EntityBase.cs" />
+    <Compile Include="Extensions\IEnumerable`TExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\StringBuilderExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\ThrowExtensions.cs" />
     <Compile Include="Interfaces.cs" />

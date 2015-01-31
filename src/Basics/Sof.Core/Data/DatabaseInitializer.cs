@@ -10,12 +10,10 @@ namespace Sof.Data
 {
     public class DatabaseInitializer
     {
-        private static readonly ICollection<Assembly> MapperAssemblies = new List<Assembly>();
-
         /// <summary>
         /// 数据库初始化,自动迁移到最新版本
         /// </summary>
-        public static void Initialize<TContext, TMigrationsConfiguration>(TContext context, Action action)
+        public static void Initialize<TContext, TMigrationsConfiguration>(TContext context, Action callback)
             where TContext : global::System.Data.Entity.DbContext
             where TMigrationsConfiguration : global::System.Data.Entity.Migrations.DbMigrationsConfiguration<TContext>, new()
         {
@@ -36,6 +34,7 @@ namespace Sof.Data
                 var objectContext = ((IObjectContextAdapter)context).ObjectContext;
                 var mappingCollection = (StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(DataSpace.CSSpace);
                 mappingCollection.GenerateViews(new List<EdmSchemaError>());
+                if (callback != null) callback();
             }
         }
 

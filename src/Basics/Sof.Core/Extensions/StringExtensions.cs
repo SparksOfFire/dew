@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.Text;
 
 namespace Sof.Extensions
 {
@@ -97,15 +98,6 @@ namespace Sof.Extensions
             return result;
         }
 
-        /// <summary>将字符串转换为指定的数据类型的值。</summary>
-        /// <typeparam name="TValue">转换的数据类型。</typeparam>
-        /// <param name="value">要转换的值。</param>
-        /// <returns>转换后的值。</returns>
-        public static TValue As<TValue>(this string value)
-        {
-            return value.As(default(TValue));
-        }
-
         /// <summary>将字符串转换为 <see cref="T:System.Boolean" /></summary>
         /// <param name="value">要转换的值。</param>
         /// <returns>转换后的值。</returns>
@@ -126,34 +118,6 @@ namespace Sof.Extensions
                 return defaultValue;
             }
             return result;
-        }
-
-        /// <summary>将字符串转换为指定的数据类型和指定默认值。</summary>
-        /// <typeparam name="TValue">转换的数据类型。</typeparam>
-        /// <param name="value">要转换的值。</param>
-        /// <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
-        /// <returns>转换后的值。</returns>
-        public static TValue As<TValue>(this string value, TValue defaultValue)
-        {
-            try
-            {
-                TypeConverter converter = TypeDescriptor.GetConverter(typeof(TValue));
-                if (converter.CanConvertFrom(typeof(string)))
-                {
-                    TValue result = (TValue)((object)converter.ConvertFrom(value));
-                    return result;
-                }
-                converter = TypeDescriptor.GetConverter(typeof(string));
-                if (converter.CanConvertTo(typeof(TValue)))
-                {
-                    TValue result = (TValue)((object)converter.ConvertTo(value, typeof(TValue)));
-                    return result;
-                }
-            }
-            catch
-            {
-            }
-            return defaultValue;
         }
 
         /// <summary>检查一个字符串是否可以转换为布尔值（真或假）型。</summary>
@@ -198,31 +162,6 @@ namespace Sof.Extensions
         {
             DateTime dateTime;
             return DateTime.TryParse(value, out dateTime);
-        }
-
-        /// <summary>检查一个字符串是否可以转换为指定的数据类型。</summary>
-        /// <typeparam name="TValue">要转换的数据类型。</typeparam>
-        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
-        /// <param name="value">检查字符串值。</param>
-        public static bool Is<TValue>(this string value)
-        {
-            TypeConverter converter = TypeDescriptor.GetConverter(typeof(TValue));
-            if (converter != null)
-            {
-                try
-                {
-                    if (value == null || converter.CanConvertFrom(null, value.GetType()))
-                    {
-                        converter.ConvertFrom(null, CultureInfo.CurrentCulture, value);
-                        return true;
-                    }
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-            return false;
         }
     }
 }
