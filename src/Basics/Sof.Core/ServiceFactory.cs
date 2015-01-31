@@ -1,8 +1,8 @@
-﻿using Sof.Core.Exceptions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using Sof.Extensions;
 
 namespace Sof.Core
 {
@@ -56,8 +56,8 @@ namespace Sof.Core
         /// <param name="contractName">服务约定配置名称</param>
         public static void Invoke<TService>(Action<TService> action, ProviderType providerType = ProviderType.Default, string contractName = null)
         {
-            Guard.ArgumentNotNull(action, "action");
-
+            action.ThrowIfNull("action");
+            
             var service = GetService<TService>(providerType, contractName);
             if (service == null) throw new Exception("未获取到服务" + typeof(TService).FullName);
             action(service);

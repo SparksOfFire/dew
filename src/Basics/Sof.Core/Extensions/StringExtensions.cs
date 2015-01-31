@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 
-namespace Etrack.Extensions
+namespace Sof.Extensions
 {
     public static class StringExtensions
     {

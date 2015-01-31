@@ -11,8 +11,8 @@ namespace Sof.Core.Ioc
     /// </summary>
     public static class Mef
     {
-        private const string MefItemKey = "MEF.CompositionContainer";
-        private static AggregateCatalog _catalog;
+        private const string MefItemKey = "Sof.Core.Ioc.Mef.CompositionContainer";
+        private static AggregateCatalog _catalog = new AggregateCatalog();
         [ThreadStatic]
         private static CompositionContainer _container;
         private static CompositionContainer container
@@ -20,12 +20,8 @@ namespace Sof.Core.Ioc
             get
             {
                 // 初始化 AggregateCatalog
-                if (_catalog == null)
-                {
-                    _catalog = new AggregateCatalog();
-                    if (InitCatalogs != null) InitCatalogs(_catalog.Catalogs);
-                    else _catalog.Catalogs.Add(GetDefaultCatalog());
-                }
+                if (Catalogs.Count == 0) Catalogs.Add(GetDefaultCatalog());
+
                 // Web 环境 从HttpContext 获取 CompositionContainer ，确保每个请求的实例是唯一的
                 if (HttpContext.Current != null)
                 {
@@ -45,7 +41,8 @@ namespace Sof.Core.Ioc
             }
         }
 
-        public static Action<ICollection<ComposablePartCatalog>> InitCatalogs { get; set; }
+        public static ICollection<ComposablePartCatalog> _initcatalogs;
+        public static ICollection<ComposablePartCatalog> Catalogs { get { return _catalog.Catalogs; } }
         private static ComposablePartCatalog GetDefaultCatalog()
         {
             var path = AppDomain.CurrentDomain.BaseDirectory;
