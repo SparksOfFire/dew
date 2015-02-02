@@ -7,7 +7,7 @@ namespace Sof.Dew
     {
         static DewDbContext()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DewDbContext>());
+            //Sof.Data.DatabaseInitializer.Initialize<DewDbContext>();
         }
 
         public DewDbContext() : base("name=DefaultConnection") { }
