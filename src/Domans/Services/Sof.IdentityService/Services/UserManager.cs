@@ -41,7 +41,7 @@ namespace Sof.IdentityService.Services
 
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
+                RequiredLength = 4,
                 RequireNonLetterOrDigit = false, //获取或设置密码是否需要一个非字母或数字字符。
                 RequireDigit = false,                    // 获取或设置密码是否需要一个数字（0-9）。
                 RequireLowercase = false,           // 获取或设置密码是否需要一个小写字母（a-z）。

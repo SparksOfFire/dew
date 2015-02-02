@@ -20,14 +20,14 @@ namespace Sof.Extensions
         /// <returns>转换后的值。</returns>
         public static int AsInt(this string value)
         {
-            return value.AsInt(0);
+            return value.AsInt(0) ?? 0;
         }
 
         /// <summary>将字符串转换为整数，并指定一个默认值。</summary>
         /// <param name="value">要转换的值。</param>
         /// <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
         /// <returns>转换后的值。</returns>
-        public static int AsInt(this string value, int defaultValue)
+        public static int? AsInt(this string value, int? defaultValue)
         {
             int result;
             if (!int.TryParse(value, out result))
@@ -42,16 +42,21 @@ namespace Sof.Extensions
         /// <returns>转换后的值。</returns>
         public static decimal AsDecimal(this string value)
         {
-            return value.As<decimal>();
+            return value.AsDecimal(0).Value;
         }
 
         /// <summary>将字符串转换为 <see cref="T:System.Decimal" /> ，并指定一个默认值。</summary>
         /// <param name="value">要转换的值。</param>
         /// <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
         /// <returns>转换后的值。</returns>
-        public static decimal AsDecimal(this string value, decimal defaultValue)
+        public static decimal? AsDecimal(this string value, decimal? defaultValue)
         {
-            return value.As(defaultValue);
+            decimal result;
+            if (!decimal.TryParse(value, out result))
+            {
+                return defaultValue;
+            }
+            return result;
         }
 
         /// <summary>将字符串转换为 <see cref="T:System.Single" /> </summary>
@@ -59,14 +64,14 @@ namespace Sof.Extensions
         /// <returns>转换后的值。</returns>
         public static float AsFloat(this string value)
         {
-            return value.AsFloat(0f);
+            return value.AsFloat(0f).Value;
         }
 
         /// <summary>将字符串转换为 <see cref="T:System.Single" /> ，并指定一个默认值。</summary>
         /// <param name="value">要转换的值。</param>
         /// <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
         /// <returns>转换后的值。</returns>
-        public static float AsFloat(this string value, float defaultValue)
+        public static float? AsFloat(this string value, float? defaultValue)
         {
             float result;
             if (!float.TryParse(value, out result))
@@ -81,14 +86,14 @@ namespace Sof.Extensions
         /// <returns>转换后的值。</returns>
         public static DateTime AsDateTime(this string value)
         {
-            return value.AsDateTime(default(DateTime));
+            return value.AsDateTime(default(DateTime)).Value;
         }
 
         /// <summary>将字符串转换为 <see cref="T:System.DateTime" /> ，并指定一个默认值。</summary>
         /// <param name="value">要转换的值。</param>
         /// <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
         /// <returns>转换后的值。</returns>
-        public static DateTime AsDateTime(this string value, DateTime defaultValue)
+        public static DateTime? AsDateTime(this string value, DateTime? defaultValue)
         {
             DateTime result;
             if (!DateTime.TryParse(value, out result))
@@ -103,14 +108,14 @@ namespace Sof.Extensions
         /// <returns>转换后的值。</returns>
         public static bool AsBool(this string value)
         {
-            return value.AsBool(false);
+            return value.AsBool(false).Value;
         }
 
         /// <summary>将字符串转换为 <see cref="T:System.Boolean" />，并指定一个默认值。</summary>
         /// <param name="value">要转换的值。</param>
         /// <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
         /// <returns>转换后的值。</returns>
-        public static bool AsBool(this string value, bool defaultValue)
+        public static bool? AsBool(this string value, bool? defaultValue)
         {
             bool result;
             if (!bool.TryParse(value, out result))

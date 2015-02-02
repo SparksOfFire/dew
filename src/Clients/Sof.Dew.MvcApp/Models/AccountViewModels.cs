@@ -7,7 +7,6 @@ namespace Sof.Dew.MvcApp.Models
     {
         [Required]
         [Display(Name = "登录名")]
-        [MinLength(6)]
         public string UserName { get; set; }
 
         [Required]
@@ -21,9 +20,13 @@ namespace Sof.Dew.MvcApp.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "手机号码")]
-        [Phone]
-        public string PhoneNumber { get; set; }
+        [Display(Name = "用户名")]
+        public string UserName { get; set; }
+
+        //[Required]
+        //[Display(Name = "手机号码")]
+        //[Phone]
+        //public string PhoneNumber { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "{0} 必须至少包含 {2} 个字符。", MinimumLength = 6)]

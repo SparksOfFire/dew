@@ -99,6 +99,9 @@
     <Compile Include="ServiceFactory.cs" />
     <Compile Include="Web\Mvc\ControllerBase.cs" />
     <Compile Include="Web\Mvc\CsRazorViewEngine.cs" />
+    <Compile Include="Web\Mvc\Extensions\Bootstrap\HtmlHelperExtensions.cs" />
+    <Compile Include="Web\Mvc\Filters\AuthorizationFilterAttribute.cs" />
+    <Compile Include="Web\Mvc\Filters\DefaultErrorAttribute.cs" />
     <Compile Include="Web\Mvc\JsonResultEx.cs" />
   </ItemGroup>
   <ItemGroup>

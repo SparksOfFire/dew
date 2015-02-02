@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
+using System.Web.Configuration;
 using System.Web.Optimization;
 
 namespace Sof.Dew.MvcApp
@@ -13,6 +15,9 @@ namespace Sof.Dew.MvcApp
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/common").Include(
+                "~/scripts/common.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ltie9").Include(
                 "~/scripts/html5shiv.js",
@@ -33,7 +38,7 @@ namespace Sof.Dew.MvcApp
 
             // 将 EnableOptimizations 设为 false 以进行调试。有关详细信息，
             // 请访问 http://go.microsoft.com/fwlink/?LinkId=301862
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = !((CompilationSection)ConfigurationManager.GetSection("system.web/compilation")).Debug;
         }
     }
 }

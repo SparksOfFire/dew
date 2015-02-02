@@ -16,7 +16,7 @@
     @Html.AntiForgeryToken()
     <div class="container-fluid">
         <div class="form-group">
-            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", placeholder = "手机号码" })
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "用户名" })
         </div>
         <div class="form-group">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "密码" })
@@ -27,22 +27,41 @@
         <div class="checkbox text-left">
             <label>
                 @Html.CheckBoxFor(m => m.Accept)
-                @Html.DisplayNameFor(m => m.Accept)@Html.ActionLink("《用户协议》", "UserAgreement")
+                @Html.DisplayNameFor(m => m.Accept)<a data-toggle="modal" data-target=".modal">《用户服务协议》</a>
             </label>
         </div>
         @Html.ValidationSummary("", new { @class = "text-danger" })
         <div class="form-group">
-            <button id="btnRegister" type="submit" class="btn btn-success btn-block btn-lg" disabled><span class="glyphicon glyphicon-ok"></span> 注 册</button>
+            <button id="btnRegister" type="submit" class="btn btn-success btn-block btn-lg" data-loading-text="正在登录..." disabled><span class="glyphicon glyphicon-ok"></span> 注 册</button>
         </div>
     </div>
 }
-
-@section Scripts {
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="agreement" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">用户服务协议</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    请务必认真阅读和理解本《用户服务协议》（以下简称《协议》）中规定的所有权利和限制。除非您接受本《协议》条款，否则您无权注册、登录或使用本协议所涉及的相关服务。您一旦注册、登录、使用或以任何方式使用本《协议》所涉及的相关服务的行为将视为对本《协议》的接受，即表示您同意接受本《协议》各项条款的约束。如果您不同意本《协议》中的条款，请不要注册、登录或使用本《协议》相关服务。 本《协议》是用户与XXXXXX之间的法律协议。
+                </p>
+                <p>
+                    1. 服务内容
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $("#Accept").click(function () {
             $("#btnRegister").prop("disabled", !$(this).prop("checked"));
         });
-
+        $("#btnRegister").click(function () {
+            if ($("form").valid()) $(this).button("loading");
+        });
     </script>
 }

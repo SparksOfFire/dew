@@ -15,7 +15,6 @@ namespace Sof.Dew.MvcApp
         {
             AreaRegistration.RegisterAllAreas();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            DatabaseConfig.Initializes();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             MefConfig.RegisterCatalogs(Mef.Catalogs);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

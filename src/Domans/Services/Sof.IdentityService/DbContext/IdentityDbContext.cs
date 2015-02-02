@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +11,23 @@ namespace Sof.IdentityService
 {
     internal class IdentityDbContext : Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext<Models.User>
     {
+        static IdentityDbContext()
+        {
+            Sof.Data.DatabaseInitializer.Initialize<IdentityDbContext>(db =>
+            {
+                if (db.Users.FirstOrDefault(u => u.UserName == "admin") == null)
+                {
+                    var userMgr = new UserManager<Models.User>(new UserStore<Models.User>(db));
+                    var task = userMgr.CreateAsync(new Models.User() { UserName = "admin", }, "111111");
+                    //task.Wait();
+                    //if (task.Result.Succeeded)
+                    //{
+                    //}
+                }
+            });
+        }
         public IdentityDbContext()
-            : base("name=DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 

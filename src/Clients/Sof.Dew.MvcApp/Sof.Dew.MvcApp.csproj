@@ -156,8 +156,8 @@
   <ItemGroup>
     <Compile Include="App_Start\AppConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\LoggingConfig.cs" />
     <Compile Include="App_Start\MefConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ViewEngineConfig.cs" />
@@ -169,6 +169,7 @@
     <Compile Include="Controllers\Account\AccountController.register.cs" />
     <Compile Include="Controllers\Account\AccountController.verify.cs" />
     <Compile Include="Areas\User\Controllers\Manage\ManageController.cs" />
+    <Compile Include="Filters\GoBackAttribute.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Areas\User\Models\ManageViewModels.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
@@ -199,6 +200,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Manage\Index.cshtml" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -266,13 +268,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Shared\_NavPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Consult\Models\" />
     <Folder Include="Areas\Consult\Views\Shared\" />
     <Folder Include="Areas\User\Views\Shared\" />
-    <Folder Include="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />

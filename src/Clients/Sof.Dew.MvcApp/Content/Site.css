@@ -9,29 +9,24 @@ html {
     height: 100%;
 }
 
-form, body, form {
+form, body, html {
     font: 16px/1.5 "Microsoft YaHei",Helvetica,STHeiti STXihei,Microsoft JhengHei,Arial;
     background-color: #fdfdfd;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0px;
+    width: 100%;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+.body-content.fixed-top {
+    position: relative;
+    top: 50px;
+    bottom: 0px;
+}
+
 .dl-horizontal dt {
     white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
 }
 
 .form-control {
@@ -48,4 +43,8 @@ textarea {
 .form-control:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.pointer {
+    cursor: pointer;
 }

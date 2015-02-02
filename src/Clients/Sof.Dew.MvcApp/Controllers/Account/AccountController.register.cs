@@ -32,8 +32,8 @@ namespace Sof.Dew.MvcApp.Controllers
                 }
                 var user = new IdentityService.Models.User
                 {
-                    PhoneNumber = model.PhoneNumber,
-                    UserName = model.PhoneNumber
+                    UserName = model.UserName,
+                    //PhoneNumber = model.PhoneNumber
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

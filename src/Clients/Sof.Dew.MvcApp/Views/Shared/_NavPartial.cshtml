@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNet.Identity
+<ul class="nav navbar-nav">
+    <li>@Html.ActionLink("主页", "Main", "Home")</li>
+    <li>@Html.ActionLink("关于", "About", "Home")</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("你好，" + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = "User" }, htmlAttributes: new { title = "Manage" })
+    </li>
+    <li>
+        @Html.ActionLink("注销", "LogOff", "Account")
+    </li>
+</ul>

@@ -18,7 +18,7 @@
     @Html.AntiForgeryToken()
     <div class="container-fluid">
         <div class="form-group">
-            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control bo", placeholder = "手机号/用户名" })
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "手机号/用户名" })
         </div>
         <div class="form-group">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "登录密码" })
@@ -31,18 +31,23 @@
             </label>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-success btn-block btn-lg"><span class="glyphicon glyphicon-ok"></span> 登录</button>
+            <button id="btnLogin" type="submit" class="btn btn-success btn-lg btn-block" data-loading-text="正在登录..."><span class="glyphicon glyphicon-ok"></span> 登录</button>
         </div>
     </div>
 }
 
-@section panel_footer{
+@section footer{
     <footer style="position:absolute; bottom:0px; line-height:50px; width:100%; text-align:center;">
         @Html.ActionLink("注册账号", "Register", null, new { @style = "padding-right:50px;" })
         @Html.ActionLink("忘记密码", "ForgotPassword", null, new { @style = "padding-left:50px;" })
     </footer>
 }
 
-@section Scripts {
+@section scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $("#btnLogin").click(function () {
+            if ($("form").valid()) $(this).button('loading');
+        });
+    </script>
 }
