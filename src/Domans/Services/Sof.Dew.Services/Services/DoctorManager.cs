@@ -12,7 +12,7 @@ namespace Sof.Dew.Services
     {
         public bool Add(Models.Doctor doctor)
         {
-            using (var db = GetDbContext())
+            using (var db = this.dbContext)
             {
                 db.Doctors.Add(doctor);
                 return db.SaveChanges() > 0;

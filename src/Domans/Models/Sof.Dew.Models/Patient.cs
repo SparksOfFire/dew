@@ -11,8 +11,12 @@ namespace Sof.Dew.Models
     {
         public string PatientId { get; set; }
 
+        [Display(Name = "姓名")]
         [Required]
         public string PatientName { get; set; }
+
+        [Display(Name = "性别")]
+        public Enums.Sex Sex { get; set; }
 
         public virtual ICollection<Doctor> Doctors { get; set; }
     }

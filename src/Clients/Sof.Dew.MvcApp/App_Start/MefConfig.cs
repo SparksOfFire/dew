@@ -12,6 +12,7 @@ namespace Sof.Dew.MvcApp
         {
             var builder = new RegistrationBuilder();
             builder.ForTypesDerivedFrom<Sof.Core.IService>().Export().ExportInterfaces();
+            builder.ForTypesDerivedFrom<System.Data.Entity.DbContext>().Export();
             var catalog = new DirectoryCatalog(HttpContext.Current.Server.MapPath("~/bin"), "Sof*.dll", builder);
             catalogs.Add(catalog);
         }

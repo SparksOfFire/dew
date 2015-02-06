@@ -17,11 +17,11 @@ namespace Sof.IdentityService
                 if (db.Users.FirstOrDefault(u => u.UserName == "admin") == null)
                 {
                     var userMgr = new UserManager<Models.User>(new UserStore<Models.User>(db));
-                    var task = userMgr.CreateAsync(new Models.User() { UserName = "admin", }, "111111");
-                    if (task.Result.Errors.Count() > 0)
-                    {
-                        Common.Logger.Error(task.Result.Errors.Join());
-                    }
+                    var result = userMgr.Create(new Models.User() { UserName = "admin", }, "111111");
+                    if (result.Errors.Count() > 0)
+                   {
+                       Common.Logger.Error(result.Errors.Join());
+                   }
                 }
             });
         }

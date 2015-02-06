@@ -54,6 +54,7 @@
     <Compile Include="DbContext\DewDbContext.cs" />
     <Compile Include="Services\DoctorManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PatientManager.cs" />
     <Compile Include="Services\ServiceBase.cs" />
   </ItemGroup>
   <ItemGroup>

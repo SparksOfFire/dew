@@ -78,6 +78,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.Composition.registration" />
@@ -160,6 +166,7 @@
     <Compile Include="App_Start\LoggingConfig.cs" />
     <Compile Include="App_Start\MefConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\ServiceProviderConfig.cs" />
     <Compile Include="App_Start\ViewEngineConfig.cs" />
     <Compile Include="Areas\Consult\ConsultAreaRegistration.cs" />
     <Compile Include="Areas\Consult\Controllers\DefaultController.cs" />
@@ -184,6 +191,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Demo\Views\CRUD\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Demo\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Demo\Views\web.config" />
+    <Content Include="Areas\Demo\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -192,6 +205,7 @@
     <Content Include="Content\homeindex.css" />
     <Content Include="Content\images\a15.png" />
     <Content Include="Content\images\a5.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -227,9 +241,6 @@
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Consult\Views\web.config" />
     <Content Include="Areas\Consult\Views\Default\Index.cshtml" />
-    <Content Include="Areas\Demo\Views\web.config" />
-    <Content Include="Areas\Demo\Views\CRUD\Index.cshtml" />
-    <Content Include="Areas\Demo\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
     <Content Include="Scripts\fullPage.js" />
@@ -280,7 +291,6 @@
     <Folder Include="Areas\Consult\Models\" />
     <Folder Include="Areas\Consult\Views\Shared\" />
     <Folder Include="Areas\Demo\Models\" />
-    <Folder Include="Areas\Demo\Views\Shared\" />
     <Folder Include="Areas\User\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

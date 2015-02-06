@@ -10,7 +10,7 @@ namespace Sof.Dew.MvcApp
 {
     public static class LoggingConfig
     {
-        public static void RegisterLogger()
+        public static void Configure()
         {
             Common.Logger = log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         }

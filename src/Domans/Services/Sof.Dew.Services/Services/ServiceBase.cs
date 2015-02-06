@@ -8,9 +8,9 @@ namespace Sof.Dew.Services
 {
     public class ServiceBase : Sof.Core.IService
     {
-        internal Sof.Dew.DewDbContext GetDbContext()
+        internal Sof.Dew.DewDbContext dbContext
         {
-            return Sof.Core.ServiceFactory.GetService<Sof.Dew.DewDbContext>();
+            get { return Sof.Core.ServiceFactory.GetService<Sof.Dew.DewDbContext>(); }
         }
     }
 }

@@ -13,8 +13,13 @@ namespace Sof.Dew.Models
     public class Doctor : Sof.Data.EntityBase
     {
         public string DoctorId { get; set; }
+
         [Required]
         public string DoctorName { get; set; }
+
+        [Display(Name = "性别")]
+        public Enums.Sex Sex { get; set; }
+
         public virtual ICollection<Patient> Patients { get; set; }
     }
 }

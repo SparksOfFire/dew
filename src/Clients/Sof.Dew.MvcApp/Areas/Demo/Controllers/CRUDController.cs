@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Sof.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList.Mvc;
+using PagedList;
 
 namespace Sof.Dew.MvcApp.Areas.Demo.Controllers
 {
@@ -11,7 +14,17 @@ namespace Sof.Dew.MvcApp.Areas.Demo.Controllers
         // GET: Demo/CRUD
         public ActionResult Index()
         {
-            return View();
+            var patientManager = ServiceFactory.GetService<Services.PatientManager>();
+            var patients = patientManager.GetPatients(predicate: p => true);
+            if (patients.Count == 0)
+            {
+                patients.Add(new Sof.Dew.Models.Patient { PatientId = "1", PatientName = "p1", Sex = Dew.Models.Enums.Sex.Male });
+                patients.Add(new Sof.Dew.Models.Patient { PatientId = "2", PatientName = "p2", Sex = Dew.Models.Enums.Sex.Female });
+                patients.Add(new Sof.Dew.Models.Patient { PatientId = "3", PatientName = "p3", Sex = Dew.Models.Enums.Sex.None });
+
+                patientManager.AddPatients(patients);
+            }
+            return View(patients.ToPagedList(1, 20));
         }
 
         // GET: Demo/CRUD/Details/5
