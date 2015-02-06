@@ -1,8 +1,7 @@
-﻿using Sof.Core.Ioc;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
-using System.Linq;
+using System.ComponentModel.Composition.Registration;
 using System.Web;
 
 namespace Sof.Dew.MvcApp
@@ -11,11 +10,24 @@ namespace Sof.Dew.MvcApp
     {
         public static void RegisterCatalogs(ICollection<ComposablePartCatalog> catalogs)
         {
-            //var builder = new System.ComponentModel.Composition.Registration.RegistrationBuilder();
-            //builder.ForTypesDerivedFrom<Sof.Services.IService>().ExportInterfaces(i => i.Name != "IService");
-            //builder.ForTypesDerivedFrom<Sof.Services.IStore>().ExportInterfaces(i => i.Name != "IStore");
-            //var catalog = new System.ComponentModel.Composition.Hosting.DirectoryCatalog(Server.MapPath("~/bin"), "*.dll", builder);
-            //catalogs.Add(catalog);
+            var builder = new RegistrationBuilder();
+            builder.ForTypesDerivedFrom<Sof.Core.IService>().Export().ExportInterfaces();
+            var catalog = new DirectoryCatalog(HttpContext.Current.Server.MapPath("~/bin"), "Sof*.dll", builder);
+            catalogs.Add(catalog);
         }
+
+        //public static void RegisterMef()
+        //{
+        //    var builder = RegisterExports();
+        //    var resolver = DependencyResolver.Current;
+        //    var newResolver = new MefDependencyResolver(builder, resolver);
+        //    DependencyResolver.SetResolver(newResolver);
+        //}
+
+        //private static AttributedModelProvider RegisterExports()
+        //{
+        //    var builder = new ConventionBuilder();
+        //    return builder;
+        //}
     }
 }

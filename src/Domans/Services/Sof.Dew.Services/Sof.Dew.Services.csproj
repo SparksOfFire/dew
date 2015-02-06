@@ -36,10 +36,15 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -55,6 +60,10 @@
     <ProjectReference Include="..\..\..\Basics\Sof.Core\Sof.Core.csproj">
       <Project>{94d808a4-86fd-4ecd-aa24-9a65f07af502}</Project>
       <Name>Sof.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Basics\Sof.Data\Sof.Data.csproj">
+      <Project>{1e681262-a21a-4364-9ed9-68f4da91c9b6}</Project>
+      <Name>Sof.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Models\Sof.Dew.Models\Sof.Dew.Models.csproj">
       <Project>{32f89f6b-c893-4a2a-ad96-66da4b2feee2}</Project>

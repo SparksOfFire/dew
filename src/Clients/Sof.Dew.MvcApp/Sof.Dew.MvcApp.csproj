@@ -290,6 +290,14 @@
       <Project>{94d808a4-86fd-4ecd-aa24-9a65f07af502}</Project>
       <Name>Sof.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Basics\Sof.Data\Sof.Data.csproj">
+      <Project>{1e681262-a21a-4364-9ed9-68f4da91c9b6}</Project>
+      <Name>Sof.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Basics\Sof.Web\Sof.Web.csproj">
+      <Project>{f8a5336e-68cd-4a97-b670-aed7c994e312}</Project>
+      <Name>Sof.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Domans\Services\Sof.Dew.Services\Sof.Dew.Services.csproj">
       <Project>{c44670ce-0d9e-4d5f-825f-2cb244e865e8}</Project>
       <Name>Sof.Dew.Services</Name>

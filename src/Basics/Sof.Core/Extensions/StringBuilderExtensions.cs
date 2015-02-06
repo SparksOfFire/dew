@@ -32,7 +32,23 @@ namespace Sof.Extensions
         {
             return stringBuilder.TrimHelper(TrimHead, trimChars);
         }
-
+        /// <summary>
+        /// 从当前 System.StringBuilder 对象移除数组中指定的字符串的所有前导匹配项。
+        /// </summary>
+        /// <param name="stringBuilder"></param>
+        /// <param name="trimString">要删除的字符串</param>
+        /// <returns>从当前字符串的开头移除所出现的所有 trimChars 参数字符串后剩余的字符串。</returns>
+        public static StringBuilder TrimStart(this StringBuilder stringBuilder, string trimString)
+        {
+            if (trimString != null && trimString.Length > 0 && stringBuilder.ToString().StartsWith(trimString))
+            {
+                return TrimStart(stringBuilder.Remove(0, trimString.Length), trimString);
+            }
+            else
+            {
+                return stringBuilder;
+            }
+        }
         /// <summary>
         /// 从当前 System.StringBuilder 对象移除数组中指定的一组字符的所有尾部匹配项。
         /// </summary>
@@ -44,7 +60,23 @@ namespace Sof.Extensions
         {
             return stringBuilder.TrimHelper(TrimTail, trimChars);
         }
-
+        /// <summary>
+        /// 从当前 System.StringBuilder 对象移除数组中指定的字符串的所有尾部匹配项。
+        /// </summary>
+        /// <param name="stringBuilder"></param>
+        /// <param name="trimString">要删除的字符串</param>
+        /// <returns>从当前字符串的结尾移除所出现的所有 trimString 参数字符串后剩余的字符串。</returns>
+        public static StringBuilder TrimEnd(this StringBuilder stringBuilder, string trimString)
+        {
+            if (trimString != null && trimString.Length > 0 && stringBuilder.ToString().EndsWith(trimString))
+            {
+                return TrimEnd(stringBuilder.Remove(stringBuilder.Length - trimString.Length, trimString.Length), trimString);
+            }
+            else
+            {
+                return stringBuilder;
+            }
+        }
         /// <summary>
         /// 从当前 System.StringBuilder 对象移除所有尾部的 "," 号。
         /// </summary>
@@ -78,10 +110,10 @@ namespace Sof.Extensions
             }
             if (trimType != TrimHead)
             {
-                for (end = stringBuilder.Length - 1; end >= start; end--)
+                for (end = stringBuilder.Length; end > start; end--)
                 {
                     int i = 0;
-                    char ch = stringBuilder[end];
+                    char ch = stringBuilder[end - 1];
                     for (i = 0; i < trimChars.Length; i++)
                     {
                         if (trimChars[i] == ch) break;
@@ -93,12 +125,11 @@ namespace Sof.Extensions
         }
         private static StringBuilder CreateTrimmedStringBuilder(this StringBuilder stringBuilder, int start, int end)
         {
-            int len = end - start + 1;
+            int len = end - start;
             if (len == stringBuilder.Length) return stringBuilder;
             if (len == 0) return stringBuilder.Clear();
 
             return stringBuilder.Remove(end, stringBuilder.Length - end).Remove(0, start);
         }
-
     }
 }

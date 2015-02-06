@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sof.Dew.Services
 {
-    public class ServiceBase
+    public class ServiceBase : Sof.Core.IService
     {
         internal Sof.Dew.DewDbContext GetDbContext()
         {

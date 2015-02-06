@@ -10,7 +10,7 @@ namespace Sof.Dew.Models
     /// <summary>
     /// 医生 
     /// </summary>
-    public class Doctor
+    public class Doctor : Sof.Data.EntityBase
     {
         public string DoctorId { get; set; }
         [Required]

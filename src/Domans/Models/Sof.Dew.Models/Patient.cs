@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sof.Dew.Models
 {
-    public class Patient
+    public class Patient : Sof.Data.EntityBase
     {
         public string PatientId { get; set; }
 

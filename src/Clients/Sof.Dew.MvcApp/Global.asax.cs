@@ -1,8 +1,4 @@
 ﻿using Sof.Core.Ioc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -13,10 +9,11 @@ namespace Sof.Dew.MvcApp
     {
         protected void Application_Start()
         {
+            LoggingConfig.RegisterLogger();
+            MefConfig.RegisterCatalogs(Mef.Catalogs);
             AreaRegistration.RegisterAllAreas();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            MefConfig.RegisterCatalogs(Mef.Catalogs);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ViewEngineConfig.RegisterEngines(ViewEngines.Engines);
         }

@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+using Sof.Extensions;
+using Sof.Utilites;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sof.IdentityService
 {
@@ -13,19 +10,23 @@ namespace Sof.IdentityService
     {
         static IdentityDbContext()
         {
+            //Database.SetInitializer(new CreateDatabaseIfNotExists<IdentityDbContext>());
+
             Sof.Data.DatabaseInitializer.Initialize<IdentityDbContext>(db =>
             {
                 if (db.Users.FirstOrDefault(u => u.UserName == "admin") == null)
                 {
                     var userMgr = new UserManager<Models.User>(new UserStore<Models.User>(db));
                     var task = userMgr.CreateAsync(new Models.User() { UserName = "admin", }, "111111");
-                    //task.Wait();
-                    //if (task.Result.Succeeded)
-                    //{
-                    //}
+                    if (task.Result.Errors.Count() > 0)
+                    {
+                        Common.Logger.Error(task.Result.Errors.Join());
+                    }
                 }
             });
         }
+
+
         public IdentityDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -40,6 +41,7 @@ namespace Sof.IdentityService
             modelBuilder.Entity<IdentityUserLogin>().ToTable("Sys_UserLogins");
             modelBuilder.Entity<IdentityUserClaim>().ToTable("Sys_UserClaims");
         }
+
         public static IdentityDbContext Create()
         {
             return new IdentityDbContext();

@@ -8,6 +8,7 @@ namespace Sof.Dew
         static DewDbContext()
         {
             //Sof.Data.DatabaseInitializer.Initialize<DewDbContext>();
+            Database.SetInitializer(new CreateDatabaseIfNotExists<DewDbContext>());
         }
 
         public DewDbContext() : base("name=DefaultConnection") { }
@@ -19,6 +20,7 @@ namespace Sof.Dew
         {
             // base.OnModelCreating(modelBuilder);
             // modelBuilder.HasDefaultSchema(""); //Oracle
+
             // Doctor Patient 建立多对多关系
             modelBuilder.Entity<Models.Doctor>().HasMany(d => d.Patients).WithMany(p => p.Doctors).Map(m =>
             {

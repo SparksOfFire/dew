@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Sof.Utilites;
+using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
+
 
 namespace Sof.Extensions
 {
     public static class StringExtensions
     {
+        private static Regex rxChinese = new Regex("^[\u4e00-\u9fa5]+$", RegexOptions.Compiled);
         /// <summary>检查字符串的值是否为null或空。</summary>
         /// <param name="value">检查字符串的值.</param>
         /// <returns>true  如果 <paramref name="value" />为null或空字符串; 否则, false.</returns>
@@ -125,9 +129,29 @@ namespace Sof.Extensions
             return result;
         }
 
+        /// <summary>
+        /// 将字符串转为五笔码
+        /// </summary>
+        /// <param name="value">要转换的值。</param>
+        /// <returns>转换后的值。</returns>
+        public static string AsWuBiMa(this string value)
+        {
+            return InputCode.GetWuBiMa(value);
+        }
+
+        /// <summary>
+        /// 将字符串转为拼音码
+        /// </summary>
+        /// <param name="value">要转换的值。</param>
+        /// <returns>转换后的值。</returns>
+        public static string AsPinYinMa(this string value)
+        {
+            return InputCode.GetFirstPinYin(value);
+        }
+
         /// <summary>检查一个字符串是否可以转换为布尔值（真或假）型。</summary>
-        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         /// <param name="value">检查字符串值。</param>
+        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         public static bool IsBool(this string value)
         {
             bool flag;
@@ -135,8 +159,8 @@ namespace Sof.Extensions
         }
 
         /// <summary>检查一个字符串是否可以转换为整形。</summary>
-        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         /// <param name="value">检查字符串值。</param>
+        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         public static bool IsInt(this string value)
         {
             int num;
@@ -144,16 +168,16 @@ namespace Sof.Extensions
         }
 
         /// <summary>检查一个字符串是否可以转换为 <see cref="T:System.Decimal" /> 类型.</summary>
-        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         /// <param name="value">检查字符串值。</param>
+        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         public static bool IsDecimal(this string value)
         {
             return value.Is<decimal>();
         }
 
         /// <summary>检查一个字符串是否可以转换为 <see cref="T:System.Single" /> 类型.</summary>
-        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         /// <param name="value">检查字符串值。</param>
+        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         public static bool IsFloat(this string value)
         {
             float num;
@@ -161,12 +185,23 @@ namespace Sof.Extensions
         }
 
         /// <summary>检查一个字符串是否可以转换为 <see cref="T:System.DateTime" /> 类型.</summary>
-        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         /// <param name="value">检查字符串值。</param>
+        /// <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
         public static bool IsDateTime(this string value)
         {
             DateTime dateTime;
             return DateTime.TryParse(value, out dateTime);
         }
+
+        /// <summary>
+        /// 检查一个字符串是否由中文组成
+        /// </summary>
+        /// <param name="value">检查字符串值。</param>
+        /// <returns>true 如果 <paramref name="value" /> 全是中文; 否则, false.</returns>
+        public static bool IsChinese(this string value)
+        {
+            return rxChinese.IsMatch(value);
+        }
+    
     }
 }

@@ -37,6 +37,10 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\..\..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\..\..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -90,6 +94,10 @@
     <ProjectReference Include="..\..\..\Basics\Sof.Core\Sof.Core.csproj">
       <Project>{94d808a4-86fd-4ecd-aa24-9a65f07af502}</Project>
       <Name>Sof.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Basics\Sof.Data\Sof.Data.csproj">
+      <Project>{1e681262-a21a-4364-9ed9-68f4da91c9b6}</Project>
+      <Name>Sof.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
