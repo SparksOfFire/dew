@@ -51,24 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContractInterfaces.cs" />
+    <Compile Include="Core\ContractInterfaces.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\IEnumerable`TExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringBuilderExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\ThrowExtensions.cs" />
-    <Compile Include="Ioc\Mef.cs" />
-    <Compile Include="Ioc\MefServiceProvider.cs" />
-    <Compile Include="IServiceProvider.cs" />
+    <Compile Include="Core\Ioc\Mef.cs" />
+    <Compile Include="Core\Ioc\MefServiceProvider.cs" />
+    <Compile Include="Core\IServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\Encryption.cs" />
-    <Compile Include="ServiceFactory.cs" />
+    <Compile Include="Core\Security\Encryption.cs" />
+    <Compile Include="Core\ServiceFactory.cs" />
     <Compile Include="Utilites\Common.cs" />
     <Compile Include="Utilites\InputCode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Caching\" />
+    <Folder Include="Core\Caching\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

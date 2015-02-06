@@ -534,7 +534,7 @@ namespace Sof.Utilites
         /// <returns></returns>
         public static string GetPinYin(string hzString)
         {
-            return ConvertWithSplitChar(hzString, char.MinValue);
+            return GetPinYinWithSplit(hzString, char.MinValue);
         }
 
         /// <summary>

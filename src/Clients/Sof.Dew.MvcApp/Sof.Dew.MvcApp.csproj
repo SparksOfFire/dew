@@ -163,6 +163,8 @@
     <Compile Include="App_Start\ViewEngineConfig.cs" />
     <Compile Include="Areas\Consult\ConsultAreaRegistration.cs" />
     <Compile Include="Areas\Consult\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Demo\Controllers\CRUDController.cs" />
+    <Compile Include="Areas\Demo\DemoAreaRegistration.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Account\AccountController.login.cs" />
     <Compile Include="Controllers\Account\AccountController.password.cs" />
@@ -225,6 +227,9 @@
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Consult\Views\web.config" />
     <Content Include="Areas\Consult\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Demo\Views\web.config" />
+    <Content Include="Areas\Demo\Views\CRUD\Index.cshtml" />
+    <Content Include="Areas\Demo\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
     <Content Include="Scripts\fullPage.js" />
@@ -274,6 +279,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Consult\Models\" />
     <Folder Include="Areas\Consult\Views\Shared\" />
+    <Folder Include="Areas\Demo\Models\" />
+    <Folder Include="Areas\Demo\Views\Shared\" />
     <Folder Include="Areas\User\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
