@@ -7,11 +7,11 @@ using System.Web.Mvc;
 
 namespace Sof.Web.Mvc.Filters
 {
-    public class AuthorizationFilterAttribute : ActionFilterAttribute, IAuthorizationFilter
+    public class AuthorizationFilterAttribute : AuthorizeAttribute 
     {
-        public void OnAuthorization(AuthorizationContext filterContext)
+        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-
+            base.HandleUnauthorizedRequest(filterContext);
         }
     }
 }

@@ -14,16 +14,16 @@ namespace Sof.Dew.MvcApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ForgotPassword(Models.ForgotPasswordViewModel model)
+        public ActionResult ForgotPassword(Models.ForgotPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
-                {
-                    // 请不要显示该用户不存在或者未经确认
-                    return View("ForgotPasswordConfirmation");
-                }
+                //var user = UserManager.FindByEmail(model.Email);
+                //if (user == null || !(UserManager.IsEmailConfirmedc(user.Id)))
+                //{
+                //    // 请不要显示该用户不存在或者未经确认
+                //    return View("ForgotPasswordConfirmation");
+                //}
 
                 // 有关如何启用帐户确认和密码重置的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=320771
                 // 发送包含此链接的电子邮件
@@ -58,24 +58,24 @@ namespace Sof.Dew.MvcApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ResetPassword(Models.ResetPasswordViewModel model)
+        public ActionResult ResetPassword(Models.ResetPasswordViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            var user = await UserManager.FindByNameAsync(model.Email);
-            if (user == null)
-            {
-                // 请不要显示该用户不存在
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
-            }
-            var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
-            }
-            AddErrors(result);
+            //if (!ModelState.IsValid)
+            //{
+            //    return View(model);
+            //}
+            //var user =  UserManager.FindByEmail(model.Email);
+            //if (user == null)
+            //{
+            //    // 请不要显示该用户不存在
+            //    return RedirectToAction("ResetPasswordConfirmation", "Account");
+            //}
+            //var result =  UserManager.ResetPassword(user.Id, model.Code, model.Password);
+            //if (result.Succeeded)
+            //{
+            //    return RedirectToAction("ResetPasswordConfirmation", "Account");
+            //}
+            //AddErrors(result);
             return View();
         }
 

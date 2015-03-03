@@ -1,9 +1,120 @@
 ﻿@{
     ViewBag.Title = "关于我们";
 }
+@section head{
+    <style>
+        .demo {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        canvas {
+            border: dashed 2px #CCC;
+        }
+    </style>
+    <link href="~/Content/Bootstrap.FontAwsome.min.css" rel="stylesheet" />
+    <link href="~/Content/buttons.min.css" rel="stylesheet" />
+}
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 <hr />
+<div class="demo" style="background: #b200ff;">
+    <button class="button button-large button-plain button-border button-circle"><i class="fa fa-reply"></i></button>
+    <button class="button button-large button-plain button-border button-box"><i class="fa fa-star"></i></button>
+    <button class="button button-large button-plain button-border button-square"><i class="fa fa-trash-o"></i></button>
+    <button class="button button-large button-plain button-borderless"><i class="fa fa-tag"></i></button>
+</div>
+<div class="demo">
+    <button class="button button-3d button-box button-jumbo"><i class="fa fa-thumbs-up"></i></button>
+    <a href="###" class="button button-3d button-primary button-rounded">Check out the new site!</a>
+    <a href="###" class="button button-3d button-action button-pill">Visit Us!</a>
+    <button class="button button-3d button-action button-circle button-jumbo"><i class="fa fa-thumbs-up"></i></button>
+    <a href="###" class="button button-3d button-caution"><i class="fa fa-camera"></i> Go</a>
+    <a href="###" class="button button-3d button-royal">Say Hi!</a>
+</div>
+<div class="demo">
+    <a href="###" class="button button-raised button-primary button-pill">Visit Us!</a>
+    <button class="button button-raised button-action button-circle button-jumbo"><i class="fa fa-thumbs-up"></i></button>
+    <a href="###" class="button button-raised button-caution"><i class="fa fa-camera"></i> Go</a>
+    <a href="###" class="button button-raised button-royal">Say Hi!</a>
+    <a href="###" class="button button-raised button-pill button-inverse">Say Hi!</a>
+</div>
+<div class="demo">
+    <button class="button button-primary button-box button-giant button-longshadow-right">
+        <i class="fa fa-twitter"></i>
+    </button>
+
+    <button class="button button-caution button-box button-raised button-giant button-longshadow">
+        <i class="fa fa-google-plus"></i>
+    </button>
+
+    <button class="button button-action button-box button-giant button-longshadow-left">
+        <i class="fa fa-share-alt"></i>
+    </button>
+
+    <button class="button button-highlight button-box button-giant button-longshadow-right button-longshadow-expand">
+        <i class="fa fa-rss"></i>
+    </button>
+
+    <button class="button button-primary button-circle button-giant button-longshadow">
+        <i class="fa fa-gear"></i>
+    </button>
+</div>
+
+<div class="demo">
+    <a href="###" class="button button-glow button-rounded button-raised button-primary">Go</a>
+    <a href="###" class="button button-glow button-border button-rounded button-primary">Go</a>
+    <button class="button button-glow button-circle button-action button-jumbo"><i class="fa fa-thumbs-up"></i></button>
+    <a href="###" class="button button-glow button-rounded button-highlight">Go</a>
+    <a href="###" class="button button-glow button-rounded button-caution">Go</a>
+    <a href="###" class="button button-glow button-rounded button-royal">Go</a>
+</div>
+
+<div class="demo">
+    <span class="button-wrap">
+        <button class="button button-circle">
+            <i class="fa fa-cloud"></i>
+        </button>
+    </span>
+
+    <span class="button-wrap">
+        <span class="button-wrap">
+            <span class="button-wrap">
+                <button id="btn111" class="button button-circle button-raised button-primary">
+                    <i class="fa fa-cloud icon-user-md"></i>
+                </button>
+            </span>
+        </span>
+    </span>
+
+    <span class="button-wrap">
+        <a href="###" class="button button-pill ">Go</a>
+    </span>
+    <span class="button-wrap">
+        <a href="###" class="button button-pill button-raised button-primary">Go</a>
+    </span>
+</div>
+<canvas id="can" width="400px" height="300px">4</canvas>
 <footer>
     <p>&copy; @DateTime.Now.Year - Sof</p>
 </footer>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $("#btn111").click(function () {
+                draw();
+            })
+        })
+        function draw() {
+            var can = document.getElementById('can');
+            var cans = can.getContext('2d');
+            cans.beginPath();
+            //arc(X,Y,Radius,startAngle,endAngle,anticlockwise),
+            //（圆心X坐标，圆心Y坐标，半径，开始角度（弧度），结束角度弧度，是否按照顺时针画）
+            cans.arc(200, 150, 100, Math.PI, Math.PI * 3 / 2, false);
+            cans.closePath();
+            cans.fillStyle = 'green';
+            cans.fill();
+        }
+    </script>
+}

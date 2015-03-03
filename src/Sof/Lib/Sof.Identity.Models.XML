@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sof.Identity.Models</name>
+    </assembly>
+    <members>
+        <member name="T:Sof.Identity.Models.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sof.Identity.Models.User.IsLockedOut">
+            <summary>
+            验证账户是否被锁定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Sof.Identity.Models.User.Id">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.PasswordHash">
+            <summary>
+            用户密码
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.SecurityStamp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.PhoneNumber">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.PhoneNumberConfirmed">
+            <summary>
+            手机号码确认
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.LockoutEnabled">
+            <summary>
+            账户被锁定
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.LockoutEndDateUtc">
+            <summary>
+            账户锁定时间
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.AccessFailedCount">
+            <summary>
+            连续登录失败次数
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Models.User.TwoFactorEnabled">
+            <summary>
+            二次登录验证
+            </summary>
+        </member>
+    </members>
+</doc>

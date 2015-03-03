@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sof.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Sof.Web.Mvc.JsonResultEx">
+            <summary>
+            JsonResult 扩展 忽略循环引用
+            </summary>
+        </member>
+    </members>
+</doc>

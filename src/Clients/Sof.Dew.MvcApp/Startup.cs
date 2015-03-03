@@ -10,8 +10,7 @@ namespace Sof.Dew.MvcApp
     {
         public void Configuration(IAppBuilder app)
         {
-            IdentityService.Startup.ConfigureAuth(app);
-           
+            //IdentityService.Startup.ConfigureAuth(app);
         }
     }
 }

@@ -78,11 +78,41 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.12.1.021\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.021\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="PagedList">
       <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
     <Reference Include="PagedList.Mvc">
       <HintPath>..\..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sof.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sof\Lib\Sof.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Sof.Identity.Core">
+      <HintPath>..\..\Sof\Lib\Sof.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sof.Identity.DataAccess">
+      <HintPath>..\..\Sof\Lib\Sof.Identity.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Sof.Identity.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sof\Lib\Sof.Identity.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Sof.Identity.Services">
+      <HintPath>..\..\Sof\Lib\Sof.Identity.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Sof.Infrastructure">
+      <HintPath>..\..\Sof\Lib\Sof.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Sof.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Sof\Lib\Sof.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -146,15 +176,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNet.Identity.Core">
-      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Owin">
-      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
-      <HintPath>..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Owin">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -176,7 +197,6 @@
     <Compile Include="Controllers\Account\AccountController.login.cs" />
     <Compile Include="Controllers\Account\AccountController.password.cs" />
     <Compile Include="Controllers\Account\AccountController.register.cs" />
-    <Compile Include="Controllers\Account\AccountController.verify.cs" />
     <Compile Include="Areas\User\Controllers\Manage\ManageController.cs" />
     <Compile Include="Filters\GoBackAttribute.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -188,7 +208,9 @@
     </Compile>
     <Compile Include="Models\HomeViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Startup.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Demo\Views\CRUD\Index.cshtml">
@@ -200,7 +222,11 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Bootstrap.FontAwsome.css" />
+    <Content Include="Content\Bootstrap.FontAwsome.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\buttons.css" />
+    <Content Include="Content\buttons.min.css" />
     <Content Include="Content\HtmlPage1.html" />
     <Content Include="Content\homeindex.css" />
     <Content Include="Content\images\a15.png" />
@@ -216,7 +242,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Manage\Index.cshtml" />
+    <Content Include="Scripts\buttons.js" />
     <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\jQuery.Bootstrap.js" />
+    <Content Include="Scripts\jQuery.Bootstrap.min.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -241,6 +272,11 @@
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Consult\Views\web.config" />
     <Content Include="Areas\Consult\Views\Default\Index.cshtml" />
+    <Content Include="Fonts\fontawesome-webfont.woff" />
+    <Content Include="Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Fonts\fontawesome-webfont.svg" />
+    <Content Include="Fonts\fontawesome-webfont.eot" />
+    <Content Include="Fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DD_belatedPNG_0.0.8a.js" />
     <Content Include="Scripts\fullPage.js" />
@@ -248,11 +284,7 @@
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\jquery-2.1.3.js" />
-    <Content Include="Scripts\jquery-2.1.3.min.js" />
-    <Content Include="Scripts\jquery-2.1.3.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <None Include="Scripts\jquery-2.1.3-vsdoc.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -292,6 +324,7 @@
     <Folder Include="Areas\Consult\Views\Shared\" />
     <Folder Include="Areas\Demo\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
+    <Folder Include="Scripts\app\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />
@@ -301,40 +334,6 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Basics\Sof.Core\Sof.Core.csproj">
-      <Project>{94d808a4-86fd-4ecd-aa24-9a65f07af502}</Project>
-      <Name>Sof.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Basics\Sof.Data\Sof.Data.csproj">
-      <Project>{1e681262-a21a-4364-9ed9-68f4da91c9b6}</Project>
-      <Name>Sof.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Basics\Sof.Web\Sof.Web.csproj">
-      <Project>{f8a5336e-68cd-4a97-b670-aed7c994e312}</Project>
-      <Name>Sof.Web</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Domans\Services\Sof.Dew.Services\Sof.Dew.Services.csproj">
-      <Project>{c44670ce-0d9e-4d5f-825f-2cb244e865e8}</Project>
-      <Name>Sof.Dew.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Domans\Models\Sof.Dew.Models\Sof.Dew.Models.csproj">
-      <Project>{32f89f6b-c893-4a2a-ad96-66da4b2feee2}</Project>
-      <Name>Sof.Dew.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Domans\Services\Sof.IdentityService\Sof.IdentityService.csproj">
-      <Project>{7898e541-f746-4144-a6e8-9073dbeaa830}</Project>
-      <Name>Sof.IdentityService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Domans\Services\Sof.MessageService\Sof.MessageService.csproj">
-      <Project>{103c1556-d1cc-40fc-add0-4937cf9dc1a6}</Project>
-      <Name>Sof.MessageService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Domans\Services\Sof.SmsService\Sof.SmsService.csproj">
-      <Project>{dcc4b844-7aaf-4bca-afc8-ffe5e066b3a5}</Project>
-      <Name>Sof.SmsService</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

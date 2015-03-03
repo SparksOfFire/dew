@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sof.Data</name>
+    </assembly>
+    <members>
+        <member name="M:Sof.Data.DatabaseInitializer.Initialize``1(System.Action{``0})">
+            <summary>
+            数据库初始化
+            </summary>
+        </member>
+        <member name="M:Sof.Data.DatabaseInitializer.Initialize``2(System.Action{``0})">
+            <summary>
+            数据库初始化,自动迁移到最新版本
+            </summary>
+        </member>
+        <member name="M:Sof.Data.DbContextBase.#ctor(System.String)">
+            <summary>
+            可以将给定字符串用作将连接到的数据库的名称或连接字符串来构造一个新的上下文实例。请参见有关这如何用于创建连接的类备注。
+            </summary>
+            <param name="nameOrConnectionString">数据库名称或连接字符串。</param>
+        </member>
+        <member name="M:Sof.Data.DbContextBase.#ctor(System.Data.Entity.Core.Objects.ObjectContext,System.Boolean)">
+            <summary>
+            围绕现有 ObjectContext 构造一个新的上下文实例。
+            </summary>
+            <param name="objectContext">要使用新的上下文包装的现有 ObjectContext。</param>
+            <param name="dbContextOwnsObjectContext"> 如果设置为 true，则释放 DbContext 时将释放 ObjectContext；否则调用方必须释放该连接。</param>
+        </member>
+    </members>
+</doc>

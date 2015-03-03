@@ -5,7 +5,6 @@ using System.Data.Entity.Core.Mapping;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
-using System.Reflection;
 
 namespace Sof.Data
 {

@@ -1,37 +1,36 @@
-﻿using Sof.IdentityService.Services;
+﻿using Sof.Identity.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Microsoft.AspNet.Identity;
+using Sof.Identity.Core;
 
 namespace Sof.Dew.MvcApp.Controllers
 {
     [Authorize]
     public partial class AccountController : Controller
     {
-        private UserManager _userManager;
-        private SignInManager _signInManager;
+        private UserService _userService;
+        private SignInService _signInService;
 
         public AccountController()
         {
         }
 
-        public UserManager UserManager
+        public UserService UserManager
         {
             get
             {
-                return _userManager ?? (_userManager = HttpContext.GetOwinContext().GetUserManager<UserManager>());
+                return _userService ?? (_userService =Sof.ServiceFactory.GetService<UserService>());
             }
         }
-        public SignInManager SignInManager
+        public SignInService SignInManager
         {
             get
             {
-                return _signInManager ?? (_signInManager = HttpContext.GetOwinContext().Get<SignInManager>());
+                return _signInService ?? (_signInService = Sof.ServiceFactory.GetService<SignInService>());
             }
         }
 

@@ -9,8 +9,8 @@ namespace Sof.Dew.MvcApp
     {
         public static void Configure()
         {
-            Sof.Core.ServiceFactory.ProviderName = typeof(Sof.Core.Ioc.MefServiceProvider).FullName;
-            Sof.Core.ServiceFactory.ServiceProviders.Add(new Sof.Core.Ioc.MefServiceProvider());
+            Sof.ServiceFactory.ProviderName = typeof(Sof.Ioc.MefServiceProvider).FullName;
+            Sof.ServiceFactory.ServiceProviders.Add(new Sof.Ioc.MefServiceProvider());
         }
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sof.Identity.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="P:Sof.Identity.DataAccess.IdentityDbContext.Users">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.DataAccess.IdentityDbContext.UserRoles">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.DataAccess.IdentityDbContext.UserLogins">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.DataAccess.IdentityDbContext.UserClaims">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.DataAccess.IdentityDbContext.Roles">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

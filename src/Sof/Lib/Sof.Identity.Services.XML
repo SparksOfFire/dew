@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sof.Identity.Services</name>
+    </assembly>
+    <members>
+        <member name="T:Sof.Identity.Services.UserService`1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sof.Identity.Services.UserService`1.AccessFailed(`0)">
+            <summary>
+            登录失败
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Services.UserService`1.FindById(`0)">
+            <summary>
+            通过主键获取用户信息
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Services.UserService`1.FindByName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Services.UserService`1.GenerateUserIdentity(Sof.Identity.Core.IUser{`0})">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Services.UserService`1.GetClaims(`0)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Services.UserService`1.GetLogins(`0)">
+            <summary>
+            
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Services.UserService`1.GetRoles(`0)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sof.Identity.Services.SignInService">
+            <summary>
+             应用程序登录管理器。
+            </summary>
+        </member>
+    </members>
+</doc>

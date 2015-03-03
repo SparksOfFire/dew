@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sof.Identity.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Sof.Identity.Core.ClaimsIdentityFactory`1.#ctor">
+            <summary>
+                Constructor
+            </summary>
+        </member>
+        <member name="M:Sof.Identity.Core.ClaimsIdentityFactory`1.CreateAsync(Sof.Identity.Core.IUser,System.String)">
+            <summary>
+                Create a ClaimsIdentity from a user
+            </summary>
+            <param name="manager"></param>
+            <param name="user"></param>
+            <param name="authenticationType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Sof.Identity.Core.ClaimsIdentityFactory`1.RoleClaimType">
+            <summary>
+                Claim type used for role claims
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.ClaimsIdentityFactory`1.UserNameClaimType">
+            <summary>
+                Claim type used for the user name
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.ClaimsIdentityFactory`1.UserIdClaimType">
+            <summary>
+                Claim type used for the user id
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.ClaimsIdentityFactory`1.SecurityStampClaimType">
+            <summary>
+                Claim type used for the user security stamp
+            </summary>
+        </member>
+        <member name="F:Sof.IdentityService.DefaultAuthenticationTypes.ApplicationCookie">
+            <summary>
+            UseSignInCookies 使用的主应用程序 Cookie 的默认值
+            </summary>
+        </member>
+        <member name="F:Sof.IdentityService.DefaultAuthenticationTypes.ExternalCookie">
+            <summary>
+            由 UseSignInCookies 配置的 ExternalSignInAuthenticationType 使用的默认值
+            </summary>
+        </member>
+        <member name="F:Sof.IdentityService.DefaultAuthenticationTypes.ExternalBearer">
+            <summary>
+            UseOAuthBearerTokens 方法使用的默认值
+            </summary>
+        </member>
+        <member name="F:Sof.IdentityService.DefaultAuthenticationTypes.TwoFactorCookie">
+            <summary>
+            Default value for authentication type used for two factor partial sign in
+            </summary>
+        </member>
+        <member name="F:Sof.IdentityService.DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie">
+            <summary>
+             Default value for authentication type used for two factor remember browser
+            </summary>
+        </member>
+        <member name="M:Sof.Extensions.IdentityExtensions.GetUserName(System.Security.Principal.IIdentity)">
+            <summary>
+            
+            </summary>
+            <param name="identity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.IdentityExtensions.GetUserId``1(System.Security.Principal.IIdentity)">
+             <summary>
+            
+             </summary>
+             <typeparam name="T"></typeparam>
+             <param name="identity"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.IdentityExtensions.GetUserId(System.Security.Principal.IIdentity)">
+             <summary>
+            
+             </summary>
+             <param name="identity"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.IdentityExtensions.FindFirstValue(System.Security.Claims.ClaimsIdentity,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="identity"></param>
+             <param name="claimType"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Core.IdentityResult.#ctor(System.String[])">
+            <summary>
+              失败返回结果的构造函数
+            </summary>
+            <param name="errors"></param>
+        </member>
+        <member name="M:Sof.Identity.Core.IdentityResult.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+             失败返回结果的构造函数
+            </summary>
+            <param name="errors"></param>
+        </member>
+        <member name="M:Sof.Identity.Core.IdentityResult.#ctor(System.Boolean)">
+            <summary>
+            成功结果的构造函数
+            </summary>
+            <param name="success"></param>
+        </member>
+        <member name="M:Sof.Identity.Core.IdentityResult.Failed(System.String[])">
+            <summary>
+             获取失败返回结果
+            </summary>
+            <param name="errors"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Sof.Identity.Core.IdentityResult.Succeeded">
+            <summary>
+             如果操作成功返回 true
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.IdentityResult.Errors">
+            <summary>
+             获取错误列表
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.IdentityResult.Success">
+            <summary>
+            静态的成功返回结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sof.Identity.Core.IPasswordHasher">
+            <summary>
+            密码混淆处理接口
+            </summary>
+        </member>
+        <member name="M:Sof.Identity.Core.IPasswordHasher.HashPassword(System.String)">
+            <summary>
+             返回混淆后的密码
+            </summary>
+            <param name="password">明文密码</param>
+            <returns>混淆后的密码</returns>
+        </member>
+        <member name="M:Sof.Identity.Core.IPasswordHasher.VerifyHashedPassword(System.String,System.String)">
+            <summary>
+             密码验证
+            </summary>
+            <param name="hashedPassword">返回混淆后的密码</param>
+            <param name="providedPassword">明文密码</param>
+            <returns>密码验证结果</returns>
+            <returns></returns>
+        </member>
+        <member name="T:Sof.Identity.Core.IUser">
+            <summary>
+             用户信息接口，包含一个Id,Name 和SecurityStamp
+            </summary>
+        </member>
+        <member name="T:Sof.Identity.Core.IUser`1">
+            <summary>
+             用户信息接口，包含一个Id和Name
+            </summary>
+            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="P:Sof.Identity.Core.IUser`1.Id">
+            <summary>
+             用户ID
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.IUser`1.UserName">
+            <summary>
+             用户名
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.IUser`1.SecurityStamp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.IUser`1.PasswordHash">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sof.Identity.Core.PasswordHasher">
+            <summary>
+             密码混淆处理实现类
+            </summary>
+        </member>
+        <member name="M:Sof.Identity.Core.PasswordHasher.HashPassword(System.String)">
+            <summary>
+             返回混淆后的密码
+            </summary>
+            <param name="password">明文密码</param>
+            <returns>混淆后的密码</returns>
+        </member>
+        <member name="M:Sof.Identity.Core.PasswordHasher.VerifyHashedPassword(System.String,System.String)">
+            <summary>
+             密码验证
+            </summary>
+            <param name="hashedPassword">混淆后的密码</param>
+            <param name="providedPassword">明文密码</param>
+            <returns>密码验证结果</returns>
+        </member>
+        <member name="M:Sof.Identity.Core.PasswordValidator.ValidateAsync(System.String)">
+            <summary>
+             验证密码是否符合规则
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Core.PasswordValidator.IsDigit(System.Char)">
+            <summary>
+             检查字符是否是0-9的数字
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Core.PasswordValidator.IsLower(System.Char)">
+            <summary>
+             检查字符是否是a-z的小写字母
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Core.PasswordValidator.IsUpper(System.Char)">
+            <summary>
+             检查字符是否是A-Z的大写字母
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Identity.Core.PasswordValidator.IsLetterOrDigit(System.Char)">
+            <summary>
+             检查字符是否是a-zA-Z的字母或0-9的数字
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Sof.Identity.Core.PasswordValidator.RequiredLength">
+            <summary>
+             获取或设置最小密码长度
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.PasswordValidator.RequireNonLetterOrDigit">
+            <summary>
+             或取或设置密码是否必须由英文字母或数字组成
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.PasswordValidator.RequireLowercase">
+            <summary>
+             获取或设置密码是否必须包含小写的英文字母
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.PasswordValidator.RequireUppercase">
+            <summary>
+            获取或设置密码是否必须包含大写的英文字母
+            </summary>
+        </member>
+        <member name="P:Sof.Identity.Core.PasswordValidator.RequireDigit">
+            <summary>
+            获取或设置密码是否必须包含数字
+            </summary>
+        </member>
+        <member name="T:Sof.Identity.Core.PasswordVerificationResult">
+            <summary>
+            密码验证结果
+            </summary>
+        </member>
+        <member name="F:Sof.Identity.Core.PasswordVerificationResult.Failed">
+            <summary>
+            密码验证失败
+            </summary>
+        </member>
+        <member name="F:Sof.Identity.Core.PasswordVerificationResult.Success">
+            <summary>
+            密码验证成功
+            </summary>
+        </member>
+        <member name="F:Sof.Identity.Core.PasswordVerificationResult.SuccessRehashNeeded">
+            <summary>
+             验证成功，但需要修改密码
+            </summary>
+        </member>
+        <member name="T:Sof.Identity.Core.SignInStatus">
+            <summary>
+            登录状态
+            </summary>
+        </member>
+        <member name="F:Sof.Identity.Core.SignInStatus.Failure">
+            <summary>
+            登录失败
+            </summary>
+        </member>
+        <member name="F:Sof.Identity.Core.SignInStatus.Success">
+            <summary>
+            登录成功
+            </summary>
+        </member>
+        <member name="F:Sof.Identity.Core.SignInStatus.LockedOut">
+            <summary>
+            账号被锁
+            </summary>
+        </member>
+        <member name="F:Sof.Identity.Core.SignInStatus.RequiresVerification">
+            <summary>
+            需要验证码
+            </summary>
+        </member>
+    </members>
+</doc>

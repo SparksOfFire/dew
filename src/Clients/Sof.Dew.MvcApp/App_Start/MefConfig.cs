@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Sof;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.ComponentModel.Composition.Registration;
+using System.Data.Entity;
 using System.Web;
 
 namespace Sof.Dew.MvcApp
@@ -11,8 +14,8 @@ namespace Sof.Dew.MvcApp
         public static void RegisterCatalogs(ICollection<ComposablePartCatalog> catalogs)
         {
             var builder = new RegistrationBuilder();
-            builder.ForTypesDerivedFrom<Sof.Core.IService>().Export().ExportInterfaces();
-            builder.ForTypesDerivedFrom<System.Data.Entity.DbContext>().Export();
+            builder.ForTypesDerivedFrom<IService>().Export().ExportInterfaces();
+            builder.ForTypesDerivedFrom<DbContext>().Export().SetCreationPolicy(CreationPolicy.NonShared);
             var catalog = new DirectoryCatalog(HttpContext.Current.Server.MapPath("~/bin"), "Sof*.dll", builder);
             catalogs.Add(catalog);
         }

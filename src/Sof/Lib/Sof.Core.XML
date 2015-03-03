@@ -1,0 +1,546 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sof.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Sof.Extensions.DateTimeExtensions">
+            <summary>
+            日期时间扩展方法
+            </summary>
+        </member>
+        <member name="M:Sof.Extensions.DateTimeExtensions.GetAge(System.DateTime)">
+            <summary>
+            获取年龄
+            </summary>
+            <param name="birthDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.DateTimeExtensions.GetAge(System.DateTime,System.DateTime)">
+            <summary>
+            获取年龄
+            </summary>
+            <param name="birthDate"></param>
+            <param name="whenDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.DateTimeExtensions.ToString(System.Nullable{System.DateTime},System.String)">
+            <summary>
+            将日期转换为指定格式的字符串,如果日期为 null, 则返回string.Empty
+            </summary>
+            <param name="dt">日期</param>
+            <param name="format">格式化字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.DateTimeExtensions.ToDateString(System.DateTime)">
+            <summary>
+            将日期转换为 yyyy-MM-dd 格式的字符串
+            </summary>
+            <param name="dt">日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.DateTimeExtensions.ToDateTimeString(System.DateTime)">
+            <summary>
+            将日期转换为 yyyy-MM-dd HH:mm:ss 格式的字符串
+            </summary>
+            <param name="dt">日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.DateTimeExtensions.ToDateString(System.Nullable{System.DateTime})">
+            <summary>
+            将日期转换为 yyyy-MM-dd 格式的字符串
+            </summary>
+            <param name="dt">日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Extensions.DateTimeExtensions.ToDateTimeString(System.Nullable{System.DateTime})">
+            <summary>
+            将日期转换为 yyyy-MM-dd  HH:mm:ss格式的字符串
+            </summary>
+            <param name="dt">日期</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sof.Extensions.IEnumerableExtensions">
+            <summary>
+            集合类型扩展方法
+            </summary>
+        </member>
+        <member name="M:Sof.Extensions.IEnumerableExtensions.Join``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            返回按指定字符分隔的字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="listValue"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sof.Extensions.ObjectExtensions">
+            <summary>
+            对象扩展方法
+            </summary>
+        </member>
+        <member name="M:Sof.Extensions.ObjectExtensions.As``1(System.Object)">
+            <summary>将值转换为指定的数据类型的值。</summary>
+            <typeparam name="TValue">转换的数据类型。</typeparam>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.ObjectExtensions.As``1(System.Object,``0)">
+            <summary>将值转换为指定的数据类型和指定默认值。</summary>
+            <typeparam name="TValue">转换的数据类型。</typeparam>
+            <param name="value">要转换的值。</param>
+            <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.ObjectExtensions.AsString(System.Object)">
+            <summary>
+            将值转换为字符串
+            </summary>
+            <param name="value">要转换的值。</param>
+            <returns>返回表示当前对象的字符串，如果 <paramref name="value" /> 为null,则返回string.Empty</returns>
+        </member>
+        <member name="M:Sof.Extensions.ObjectExtensions.Is``1(System.Object)">
+            <summary>检查一个值是否可以转换为指定的数据类型。</summary>
+            <typeparam name="TValue">要转换的数据类型。</typeparam>
+            <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
+            <param name="value">检查字符串值。</param>
+        </member>
+        <member name="M:Sof.Extensions.ObjectExtensions.ToJson(System.Object)">
+            <summary>
+            将对象序列化为JSON字符串，循环引用的对象将被忽略
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sof.Extensions.StringBuilderExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Sof.Extensions.StringBuilderExtensions.Trim(System.Text.StringBuilder,System.Char[])">
+            <summary>
+            从当前 System.StringBuilder 对象移除数组中指定的一组字符的所有前导匹配项和尾部匹配项。
+            </summary>
+            <param name="stringBuilder"></param>
+            <param name="trimChars">要删除的 Unicode 字符的数组，或 null。</param>
+            <returns>从当前字符串的开头和结尾删除所出现的所有 trimChars 参数中的字符后剩余的字符串。 
+            如果 trimChars 为 null 或空数组，则改为移除空白字符。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringBuilderExtensions.TrimStart(System.Text.StringBuilder,System.Char[])">
+            <summary>
+            从当前 System.StringBuilder 对象移除数组中指定的一组字符的所有前导匹配项。
+            </summary>
+            <param name="stringBuilder"></param>
+            <param name="trimChars">要删除的 Unicode 字符的数组，或 null。</param>
+            <returns>从当前字符串的开头移除所出现的所有 trimChars 参数中的字符后剩余的字符串。
+            如果 trimChars 为 null 或空数组，则改为移除空白字符。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringBuilderExtensions.TrimStart(System.Text.StringBuilder,System.String)">
+            <summary>
+            从当前 System.StringBuilder 对象移除数组中指定的字符串的所有前导匹配项。
+            </summary>
+            <param name="stringBuilder"></param>
+            <param name="trimString">要删除的字符串</param>
+            <returns>从当前字符串的开头移除所出现的所有 trimChars 参数字符串后剩余的字符串。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringBuilderExtensions.TrimEnd(System.Text.StringBuilder,System.Char[])">
+            <summary>
+            从当前 System.StringBuilder 对象移除数组中指定的一组字符的所有尾部匹配项。
+            </summary>
+            <param name="stringBuilder"></param>
+            <param name="trimChars">要删除的 Unicode 字符的数组，或 null。</param>
+            <returns>从当前字符串的结尾移除所出现的所有 trimChars 参数中的字符后剩余的字符串。 
+            如果 trimChars 为 null 或空数组，则改为删除 Unicode 空白字符。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringBuilderExtensions.TrimEnd(System.Text.StringBuilder,System.String)">
+            <summary>
+            从当前 System.StringBuilder 对象移除数组中指定的字符串的所有尾部匹配项。
+            </summary>
+            <param name="stringBuilder"></param>
+            <param name="trimString">要删除的字符串</param>
+            <returns>从当前字符串的结尾移除所出现的所有 trimString 参数字符串后剩余的字符串。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringBuilderExtensions.TrimEndComma(System.Text.StringBuilder)">
+            <summary>
+            从当前 System.StringBuilder 对象移除所有尾部的 "," 号。
+            </summary>
+            <param name="stringBuilder"></param>
+            <returns>从当前字符串的结尾移除所出现的所有 "," 后剩余的字符串。</returns>
+        </member>
+        <member name="T:Sof.Extensions.StringExtensions">
+            <summary>
+            字符串扩展方法
+            </summary>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.IsEmpty(System.String)">
+            <summary>检查字符串的值是否为null或空。</summary>
+            <param name="value">检查字符串的值.</param>
+            <returns>true  如果 <paramref name="value" />为null或空字符串; 否则, false.</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsInt(System.String)">
+            <summary>将字符串转换为整数。</summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsInt(System.String,System.Nullable{System.Int32})">
+            <summary>将字符串转换为整数，并指定一个默认值。</summary>
+            <param name="value">要转换的值。</param>
+            <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsLong(System.String)">
+            <summary>将字符串转换为整数。</summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsLong(System.String,System.Nullable{System.Int64})">
+            <summary>将字符串转换为整数，并指定一个默认值。</summary>
+            <param name="value">要转换的值。</param>
+            <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsDecimal(System.String)">
+            <summary>将字符串转换为<see cref="T:System.Decimal" /></summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsDecimal(System.String,System.Nullable{System.Decimal})">
+            <summary>将字符串转换为 <see cref="T:System.Decimal" /> ，并指定一个默认值。</summary>
+            <param name="value">要转换的值。</param>
+            <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsFloat(System.String)">
+            <summary>将字符串转换为 <see cref="T:System.Single" /> </summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsFloat(System.String,System.Nullable{System.Single})">
+            <summary>将字符串转换为 <see cref="T:System.Single" /> ，并指定一个默认值。</summary>
+            <param name="value">要转换的值。</param>
+            <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsDateTime(System.String)">
+            <summary>将字符串转换为 <see cref="T:System.DateTime" /></summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsDateTime(System.String,System.Nullable{System.DateTime})">
+            <summary>将字符串转换为 <see cref="T:System.DateTime" /> ，并指定一个默认值。</summary>
+            <param name="value">要转换的值。</param>
+            <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsBool(System.String)">
+            <summary>将字符串转换为 <see cref="T:System.Boolean" /></summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsBool(System.String,System.Nullable{System.Boolean})">
+            <summary>将字符串转换为 <see cref="T:System.Boolean" />，并指定一个默认值。</summary>
+            <param name="value">要转换的值。</param>
+            <param name="defaultValue">如果 <paramref name="value" /> 为空或是一个无效的值则返回该值,。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsWuBiMa(System.String)">
+            <summary>
+            将字符串转为五笔码
+            </summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.AsPinYinMa(System.String)">
+            <summary>
+            将字符串转为拼音码
+            </summary>
+            <param name="value">要转换的值。</param>
+            <returns>转换后的值。</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.IsBool(System.String)">
+            <summary>检查一个字符串是否可以转换为布尔值（真或假）型。</summary>
+            <param name="value">检查字符串值。</param>
+            <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.IsInt(System.String)">
+            <summary>检查一个字符串是否可以转换为整形。</summary>
+            <param name="value">检查字符串值。</param>
+            <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.IsDecimal(System.String)">
+            <summary>检查一个字符串是否可以转换为 <see cref="T:System.Decimal" /> 类型.</summary>
+            <param name="value">检查字符串值。</param>
+            <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.IsFloat(System.String)">
+            <summary>检查一个字符串是否可以转换为 <see cref="T:System.Single" /> 类型.</summary>
+            <param name="value">检查字符串值。</param>
+            <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.IsDateTime(System.String)">
+            <summary>检查一个字符串是否可以转换为 <see cref="T:System.DateTime" /> 类型.</summary>
+            <param name="value">检查字符串值。</param>
+            <returns>true 如果 <paramref name="value" /> 可以转换为指定的类型; 否则, false.</returns>
+        </member>
+        <member name="M:Sof.Extensions.StringExtensions.IsChinese(System.String)">
+            <summary>
+            检查一个字符串是否由中文组成
+            </summary>
+            <param name="value">检查字符串值。</param>
+            <returns>true 如果 <paramref name="value" /> 全是中文; 否则, false.</returns>
+        </member>
+        <member name="T:Sof.Extensions.ThrowExtensions">
+            <summary>
+            异常扩展方法
+            </summary>
+        </member>
+        <member name="M:Sof.Extensions.ThrowExtensions.ThrowIfNull(System.Object,System.String,System.String)">
+            <summary>
+            如果值为 null 则引发 ArgumentNullException 异常
+            </summary>
+            <param name="argumentValue">参数值</param>
+            <param name="argumentName">参数名称</param>
+            <param name="message">异常提示信息</param>
+        </member>
+        <member name="M:Sof.Extensions.ThrowExtensions.ThrowIfNullOrEmpty(System.Object,System.String)">
+            <summary>
+            如果值为 null 或 空白 则引发 ArgumentException 异常
+            </summary>
+            <param name="argumentValue">参数值</param>
+            <param name="argumentName">参数名称</param>
+        </member>
+        <member name="M:Sof.Extensions.ThrowExtensions.ThrowIfOutOfRange(System.IComparable,System.String,System.Object,System.Object)">
+            <summary>
+            如果 值 小于 min 或 大于 max 则引发 ArgumentOutOfRangeException 异常
+            </summary>
+            <param name="value">参数值</param>
+            <param name="argumentName">参数名称</param>
+            <param name="min">最小值</param>
+            <param name="max">最大值</param>
+        </member>
+        <member name="M:Sof.Extensions.ThrowExtensions.ThrowIfDisposed(Sof.Core.DisposableObject)">
+            <summary>
+            如果对象已经释放，则引发 ObjectDisposedException 异常
+            </summary>
+            <param name="value">参数值</param>
+        </member>
+        <member name="T:Sof.Core.Ioc.Mef">
+            <summary>
+            MEF 对象提供。
+            </summary>
+        </member>
+        <member name="M:Sof.Core.Ioc.Mef.GetExportedValue``1(System.String)">
+            <summary>
+            获取具有指定的协定名称的已导出对象或指定类型的默认值，如果有多个匹配的已导出对象，则引发异常。
+            </summary>
+            <typeparam name="T">要返回的已导出对象的类型。</typeparam>
+            <param name="contractName">要返回的已导出对象的协定名称，或者为 null 或空字符串 ("") 以使用默认的协定名称。</param>
+            <returns>如果找到匹配项，则为具有指定的协定名称的已导出对象；否则为 T 的默认值。</returns>
+            <exception cref="T:System.ComponentModel.Composition.ImportCardinalityMismatchException">
+            System.ComponentModel.Composition.Hosting.CompositionContainer 中，有多个具有指定的协定名称的已导出对象。</exception>
+            <exception cref="T:System.ObjectDisposedException"> 
+            System.ComponentModel.Composition.Hosting.CompositionContainer 对象已被释放。</exception>
+            <exception cref="T:System.ComponentModel.Composition.CompositionContractMismatchException">
+            不能将基础导出对象强制转换为 T。</exception>
+            <exception cref="!: System.ComponentModel.Composition.CompositionException:">
+            组合期间发生错误。System.ComponentModel.Composition.CompositionException.Errors 将包含所发生错误的集合。
+            </exception>
+        </member>
+        <!-- 对于成员“M:Sof.Core.Ioc.Mef.GetExportedValues``1(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="T:Sof.Core.IServiceProvider">
+            <summary>
+             定义一种检索服务对象的机制，服务对象是为其他对象提供自定义支持的对象。
+            </summary>
+        </member>
+        <member name="M:Sof.Core.IServiceProvider.GetService``1(System.String)">
+            <summary>
+             获取一个服务
+            </summary>
+            <typeparam name="TService">服务类型</typeparam>
+            <param name="name">服务名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Core.IServiceProvider.GetServices``1(System.String)">
+            <summary>
+             获取多个服务
+            </summary>
+            <typeparam name="TService">服务类型</typeparam>
+            <param name="name">服务约定名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Core.IServiceProvider.Invoke``1(System.Action{``0},System.String)">
+            <summary>
+            调用服务
+            </summary>
+            <typeparam name="TService">服务类型</typeparam>
+            <param name="action">操作</param>
+            <param name="name">服务约定名称</param>
+        </member>
+        <member name="M:Sof.Core.IServiceProvider.Invoke``2(System.Func{``0,``1},System.String)">
+            <summary>
+            调用服务,并返回数据
+            </summary>
+            <typeparam name="TService">服务类型</typeparam>
+            <typeparam name="TResult">返回数据类型</typeparam>
+            <param name="func">操作</param>
+            <param name="contractName">服务约定名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.MD5Encrypt(System.String)">
+            <summary>
+            MD5 加密
+            </summary>
+            <param name="encryptString">待加密的明文</param>
+            <returns>加密后的密文</returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.DESEncrypt(System.String,System.String)">
+            <summary>
+            DES 加密(数据加密标准，速度较快，适用于加密大量数据的场合）
+            </summary>
+            <param name="encryptString">待加密的明文</param>
+            <param name="encryptKey">加密的密钥,必须为8位</param>
+            <returns>加密后的密文</returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.DESDecrypt(System.String,System.String)">
+            <summary>
+            DES 解密(数据加密标准，速度较快，适用于加密大量数据的场合）
+            </summary>
+            <param name="DecryptString">待解密的密文</param>
+            <param name="DecryptKey">解密的密钥,必须为8位</param>
+            <returns>解密后的明文</returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.RC2Encrypt(System.String,System.String)">
+            <summary>
+            RC2 加密(用变长密钥对大量数据进行加密)
+            </summary>
+            <param name="encryptString">待加密密文</param>
+            <param name="encryptKey">加密密钥</param>
+            <returns>returns</returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.RC2Decrypt(System.String,System.String)">
+            <summary>
+            RC2 解密(用变长密钥对大量数据进行加密)
+            </summary>
+            <param name="DecryptString">待解密密文</param>
+            <param name="DecryptKey">解密密钥</param>
+            <returns>returns</returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.DES3Encrypt(System.String,System.String,System.String,System.String)">
+            <summary>
+            3DES 加密(基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高)
+            </summary>
+            <param name="encryptString">待加密密文</param>
+            <param name="encryptKey1">密钥一</param>
+            <param name="encryptKey2">密钥二</param>
+            <param name="encryptKey3">密钥三</param>
+            <returns>returns</returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.DES3Decrypt(System.String,System.String,System.String,System.String)">
+            <summary>
+            3DES 解密(基于DES，对一块数据用三个不同的密钥进行三次加密，强度更高)
+            </summary>
+            <param name="DecryptString">待解密密文</param>
+            <param name="DecryptKey1">密钥一</param>
+            <param name="DecryptKey2">密钥二</param>
+            <param name="DecryptKey3">密钥三</param>
+            <returns>returns</returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.AESEncrypt(System.String,System.String)">
+            <summary>
+            AES 加密(高级加密标准，是下一代的加密算法标准，速度快，安全级别高，目前 AES 标准的一个实现是 Rijndael 算法)
+            </summary>
+            <param name="encryptString">待加密密文</param>
+            <param name="encryptKey">加密密钥</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Core.Security.Encryption.AESDecrypt(System.String,System.String)">
+            <summary>
+            AES 解密(高级加密标准，是下一代的加密算法标准，速度快，安全级别高，目前 AES 标准的一个实现是 Rijndael 算法)
+            </summary>
+            <param name="DecryptString">待解密密文</param>
+            <param name="DecryptKey">解密密钥</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sof.Core.ServiceFactory">
+            <summary>
+            提供服务对象的创建和调用
+            </summary>
+        </member>
+        <member name="M:Sof.Core.ServiceFactory.GetService``1(System.String)">
+            <summary>
+            获取服务
+            </summary>
+            <typeparam name="TService">服务类型</typeparam>
+            <param name="providerType">服务提供程序类型</param>
+            <param name="contractName">服务约定配置名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Core.ServiceFactory.GetServices``1(System.String)">
+            <summary>
+            获取服务
+            </summary>
+            <typeparam name="TService">服务类型</typeparam>
+            <param name="providerType">服务提供程序类型</param>
+            <param name="contractName">服务约定配置名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Core.ServiceFactory.Invoke``1(System.Action{``0},System.String)">
+            <summary>
+            调用服务
+            </summary>
+            <typeparam name="TService">服务类型</typeparam>
+            <param name="action">调用方法</param>
+            <param name="providerType">服务提供程序类型</param>
+            <param name="contractName">服务约定配置名称</param>
+        </member>
+        <member name="P:Sof.Core.ServiceFactory.ServiceProviders">
+            <summary>
+            获取服务提供程序的集合
+            </summary>
+        </member>
+        <member name="P:Sof.Core.ServiceFactory.ProviderName">
+            <summary>
+            获取或设置服务提供程序名，如果设置了 ProviderName 则只能从该提供程序获取服务
+            </summary>
+        </member>
+        <member name="T:Sof.Core.ServiceProviderCollection">
+            <summary>
+            服务提供程序集合
+            </summary>
+        </member>
+        <member name="T:Sof.Utilites.InputCode">
+            <summary>
+            用户输入码工具类
+            </summary>
+        </member>
+        <member name="M:Sof.Utilites.InputCode.GetPinYin(System.String)">
+            <summary>
+            获取全拼
+            </summary>
+            <param name="hzString">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Utilites.InputCode.GetPinYinWithSplit(System.String,System.Char)">
+            <summary>
+            获取全拼 按指定字符隔开,默认为空格
+            </summary>
+            <param name="hzString">字符串</param>
+            <param name="splitChar">分隔符,默认为空格</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Utilites.InputCode.GetFirstPinYin(System.String)">
+            <summary>
+            获取拼音首字母
+            </summary>
+            <param name="hzString">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sof.Utilites.InputCode.GetWuBiMa(System.String)">
+            <summary>
+            获取五笔码
+            </summary>
+            <param name="hzString">字符串</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -13,13 +13,11 @@ namespace Sof.Dew.MvcApp.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult Main()
         {
             return View();
         }
 
-        [Authorize]
         public ActionResult About()
         {
             return View();

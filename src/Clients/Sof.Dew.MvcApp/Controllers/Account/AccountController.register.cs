@@ -22,7 +22,7 @@ namespace Sof.Dew.MvcApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(Models.RegisterViewModel model)
+        public ActionResult Register(Models.RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -30,15 +30,15 @@ namespace Sof.Dew.MvcApp.Controllers
                 {
                     ModelState.AddModelError("", "注册账号需要同意《用户协议》");
                 }
-                var user = new IdentityService.Models.User
+                var user = new Identity.Models.User
                 {
                     UserName = model.UserName,
                     //PhoneNumber = model.PhoneNumber
                 };
-                var result = await UserManager.CreateAsync(user, model.Password);
+                var result = UserManager.Create(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    SignInManager.SignIn(user);
 
                     // 有关如何启用帐户确认和密码重置的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=320771
                     // 发送包含此链接的电子邮件
