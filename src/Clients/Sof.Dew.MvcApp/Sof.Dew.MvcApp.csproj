@@ -236,6 +236,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\notify.html" />
+    <Content Include="Scripts\app\home.main.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-theme.css.map" />
@@ -243,7 +244,7 @@
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Manage\Index.cshtml" />
     <Content Include="Scripts\buttons.js" />
-    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\config.js" />
     <Content Include="Scripts\jQuery.Bootstrap.js" />
     <Content Include="Scripts\jQuery.Bootstrap.min.js" />
     <Content Include="Scripts\r.js" />
@@ -324,7 +325,6 @@
     <Folder Include="Areas\Consult\Views\Shared\" />
     <Folder Include="Areas\Demo\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
-    <Folder Include="Scripts\app\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />

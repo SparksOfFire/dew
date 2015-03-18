@@ -1,6 +1,5 @@
-﻿@using Microsoft.AspNet.Identity
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -9,40 +8,27 @@
     <meta name="keywords" content="keyword1,keyword2,keyword3..">
     <meta name="author" content="Sparks of fire">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Sof @ViewBag.BackUrl</title>
+    <title>@ViewBag.Title - Sof</title>
     @Styles.Render("~/content/css")
     @Scripts.Render("~/bundles/modernizr")
     <!--[if lt IE 9]>
         @Scripts.Render("~/bundles/ltie9")
     <![endif]-->
     @RenderSection("head", required: false)
+    <script>
+        // m: app模块名称，def: 依赖模块数组，func: 模块函数
+        function _require(m, def, func) {
+            require(['../config'], function () { require([m]); }), define(m, def, function ($) { func($) })
+            //require(['../config'], function () { require([m], define(def, func)); });
+            require(['../config'], function () { require([m]); }, define(m, def, function ($) { func($) }))
+        }
+        function myRequire(m, def, func) {
+            require(['../config'],  define(m, def, function ($) { func($) }))
+        }
+    </script>
+    @RenderSection("scripts", required: false)
 </head>
 <body>
-    @if (Request.IsAuthenticated)
-    {
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="@ViewBag.BackUrl">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span>@ViewBag.Title</span>
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    @Html.Partial("_NavPartial")
-                </div>
-            </div>
-        </div>
-    }
     @RenderBody()
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-    <script src="~/Scripts/common.js"></script>
 </body>
 </html>

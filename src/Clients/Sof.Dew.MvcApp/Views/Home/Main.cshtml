@@ -1,14 +1,166 @@
 ﻿@model Sof.Dew.MvcApp.Models.MainModel
-
 @{
     ViewBag.Title = "Main";
 }
-<div class="body-content fixed-top">
-    <h2>Main</h2>
-</div>
-@section scripts {
-    <script>
+@section head{
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+        }
 
-    </script>
+        .body-content {
+            overflow: auto;
+            position: fixed;
+            top: 76px;
+            bottom: 52px;
+            left: 0px;
+            width: 100%;
+            border: 1px solid red;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            padding-top: 2px;
+            width: 100%;
+            height: 52px;
+            border-top: 1px solid #e0e0e0;
+            background-color: whitesmoke;
+            color: #808080;
+            text-align: center;
+        }
+
+        .footer table {
+            width: 100%;
+        }
+
+        .footer a {
+            color: #808080;
+        }
+
+        .footer a span {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .navbar-green {
+            width: 100%;
+            background-color: #70cddc;
+            border-bottom: 2px solid #4BBCCC;
+            height: 42px;
+            margin: 0px;
+        }
+
+        .navbar-green .container {
+            margin: 0px;
+            padding: 0px;
+            height: 46px;
+            width: 100%;
+            background-color: #4CC1D2;
+        }
+
+        .info {
+            margin: 0px;
+            background-color: #c4e6f0;
+            width: 100%;
+            line-height: 28px;
+        }
+    </style>
 }
+@section scripts {
+    <script src="@Url.Content("~/scripts/require.js")" data-main="@Url.Content("~/scripts/app/home.main.js")"></script>
+}
+<header class="header">
+    <div class="navbar navbar-green">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@ViewBag.BackUrl">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span>@ViewBag.Title</span>
+                </a>
+            </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </div>
+    <div class="info">
+        <img src="~/Content/images/a5.png" width="20" />
+        a
+    </div>
+</header>
+
+<section class="body-content">
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容<br />
+    内容00000000000000000<br />
+</section>
+
+<footer class="footer container-fluid">
+    <table class="container-fluid">
+        <tr>
+            <td><a href="#" class="text-primary"><span class="glyphicon glyphicon-home"></span><div>问道</div></a></td>
+            <td><a href="#" class="text-primary"><span class="glyphicon glyphicon-user"></span> <div>悟道</div></a></td>
+            <td><a href="#" class="text-primary"><span class="glyphicon glyphicon-heart-empty"></span> <div>算命</div></a></td>
+            <td><a href="#" class="text-primary"><span class="glyphicon glyphicon-home"></span><div> 同道</div></a></td>
+            <td><a href="#" class="text-primary"><span class="glyphicon glyphicon-home"></span><div>出道</div></a></td>
+        </tr>
+    </table>
+</footer>
+
+
+
+
 

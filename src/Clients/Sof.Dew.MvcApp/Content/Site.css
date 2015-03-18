@@ -14,17 +14,6 @@ form, body, html {
     background-color: #fdfdfd;
 }
 
-.body-content {
-    padding: 0px;
-    width: 100%;
-}
-
-.body-content.fixed-top {
-    position: relative;
-    top: 50px;
-    bottom: 0px;
-}
-
 .dl-horizontal dt {
     white-space: normal;
 }

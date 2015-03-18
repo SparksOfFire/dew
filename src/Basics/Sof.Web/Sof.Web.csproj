@@ -83,6 +83,7 @@
     <Compile Include="Mvc\ControllerBase.cs" />
     <Compile Include="Mvc\CsRazorViewEngine.cs" />
     <Compile Include="Mvc\Extensions\Bootstrap\HtmlHelperExtensions.cs" />
+    <Compile Include="Mvc\Extensions\WebViewPageExtensions.cs" />
     <Compile Include="Mvc\Filters\AuthorizationFilterAttribute.cs" />
     <Compile Include="Mvc\Filters\DefaultErrorAttribute.cs" />
     <Compile Include="Mvc\Filters\ValidateModelAttribute.cs" />

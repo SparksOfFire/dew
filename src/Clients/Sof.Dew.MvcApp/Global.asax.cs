@@ -13,7 +13,7 @@ namespace Sof.Dew.MvcApp
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            ViewEngineConfig.RegisterEngines(ViewEngines.Engines);
+            //ViewEngineConfig.RegisterEngines(ViewEngines.Engines);
 
             MefConfig.RegisterCatalogs(Mef.Catalogs);
             LoggingConfig.Configure();
